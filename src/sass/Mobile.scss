@@ -1,0 +1,310 @@
+@use "./colors" as c;
+@use "./animation" as a;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+	height: -webkit-fill-avaiable;
+}
+body {
+	background-color: #000000;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%23000000' cx='50' cy='0' r='50'/%3E%3Cg fill='%23090909' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%23101010' cx='50' cy='100' r='50'/%3E%3Cg fill='%23161616' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%231b1b1b' cx='50' cy='200' r='50'/%3E%3Cg fill='%23202020' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%23242424' cx='50' cy='300' r='50'/%3E%3Cg fill='%23292929' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%232f2f2f' cx='50' cy='400' r='50'/%3E%3Cg fill='%23343434' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%23393939' cx='50' cy='500' r='50'/%3E%3Cg fill='%233e3e3e' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%23444444' cx='50' cy='600' r='50'/%3E%3Cg fill='%23494949' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%234f4f4f' cx='50' cy='700' r='50'/%3E%3Cg fill='%23555555' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%235a5a5a' cx='50' cy='800' r='50'/%3E%3Cg fill='%23606060' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%23666666' cx='50' cy='900' r='50'/%3E%3Cg fill='%236c6c6c' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23727272' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
+	background-attachment: fixed;
+	background-size: contain;
+
+	font-family: "Montserrat", sans-serif;
+}
+.bold {
+	font-weight: bold;
+}
+// ----------------------------------NAV-MOBILE----------------------------------------------
+.nav__mobile {
+	padding: 0 1rem;
+	position: fixed;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	bottom: 0;
+	width: 100%;
+	height: 8rem;
+	background-color: c.$bodyColor;
+	z-index: 999;
+	box-shadow: 0 0 5px c.$mainColor;
+	&-item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		font-size: 1.5rem;
+		color: c.$mainColor;
+		width: 100%;
+		height: 100%;
+		transition: transform 0.3s;
+		text-decoration: none;
+
+		i {
+			margin-bottom: 0.5rem;
+			font-size: 2rem;
+		}
+	}
+	&-item:focus,
+	&-item:hover {
+		transform: translateY(-2rem);
+		border-radius: 25px;
+		background-color: c.$mainColor;
+		color: c.$bodyColor;
+	}
+}
+// ----------------------------------Header-MOBILE---------------------------------------------
+
+.header__mobile {
+	padding: 1.2rem;
+	height: 100vh;
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		position: relative;
+		margin-top: -10rem;
+		&-title {
+			color: c.$bodyColor;
+			margin-bottom: 2rem;
+			font-size: 3rem;
+		}
+		&-text--mobile {
+			font-size: 1.5rem;
+			text-align: center;
+			color: c.$bodyColor;
+		}
+		&-finger {
+			position: absolute;
+			bottom: 9rem;
+
+			&-text {
+				font-size: 1.3rem;
+				color: c.$bodyColor;
+			}
+			a {
+				margin-top: 2rem;
+				display: block;
+				text-align: center;
+				padding: 15px 0;
+				bottom: 9rem;
+				font-size: 4rem;
+				color: c.$bodyColor;
+			}
+			a:focus,
+			a:hover {
+				color: rgba(19, 140, 161, 0.803);
+			}
+			.active {
+				border: 1px solid tomato;
+			}
+			.active::before {
+				content: "";
+				position: absolute;
+				top: 35px;
+				left: 0px;
+				height: 1px;
+				width: 100%;
+				background-color: tomato;
+				animation: upToDown 0.8s forwards;
+			}
+		}
+	}
+}
+// ----------------------------------About-me-Mobile---------------------------------------------
+.time-of-learn {
+	font-size: 1.4rem;
+	font-weight: bold;
+	padding: 1rem;
+}
+
+.about-me {
+	padding: 1rem;
+	margin-bottom: 8rem;
+	margin-top: 2rem;
+
+	&__box {
+		&-title {
+			margin: 1.25rem;
+			font-size: 1.5rem;
+			color: c.$bodyColor;
+		}
+		&-info {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: c.$bodyColor;
+			&-photo {
+				position: relative;
+				margin-right: 1rem;
+				z-index: 1;
+				&-img {
+					border-radius: 50%;
+					width: 100px;
+					height: 100px;
+					transition: transform 0.3s;
+				}
+				&-img:hover {
+					transform: scale(1.2);
+				}
+			}
+			&-photo::before {
+				content: "";
+				position: absolute;
+				width: 80%;
+				height: 98%;
+				background-color: c.$bodyColor;
+				left: -1rem;
+				border-top-right-radius: 25px;
+				border-bottom-right-radius: 25px;
+				z-index: -1;
+			}
+			&-text {
+				&-title {
+					font-size: 2rem;
+				}
+				&-description {
+					font-size: 1.4rem;
+				}
+			}
+		}
+		&-table--mobile {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 2rem;
+			border: 1px solid c.$mainColor;
+			border-radius: 25px;
+			backdrop-filter: blur(5px);
+			&-element {
+				margin: 0.4rem;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-items: center;
+				position: relative;
+				.circle {
+					position: relative;
+					margin: 0.5rem 0;
+					width: 50px;
+					height: 50px;
+					border: 1px solid c.$bodyColor;
+					border-radius: 50%;
+					overflow: hidden;
+				}
+				.html,
+				.css,
+				.scss,
+				.js,
+				.react {
+					position: absolute;
+					bottom: 0;
+					width: 100%;
+					background-color: c.$bodyColor;
+				}
+				.html {
+					height: 78%;
+				}
+				.css,
+				.scss {
+					height: 70%;
+				}
+				.js {
+					height: 60%;
+				}
+				.react {
+					height: 55%;
+				}
+
+				svg {
+					position: absolute;
+					top: 1px;
+				}
+				.svg-css,
+				.svg-scss {
+					top: 5px;
+				}
+				.svg-js {
+					top: 10px;
+				}
+				.svg-react {
+					top: 12px;
+				}
+				&-title {
+					font-size: 1.4rem;
+					color: c.$bodyColor;
+				}
+				&-procent {
+					position: absolute;
+					font-weight: bold;
+					top: 50%;
+					font-size: 1.3rem;
+				}
+			}
+		}
+		&-table--desktop {
+			display: none;
+		}
+	}
+	&__info {
+		margin-top: 1.5rem;
+		&-box {
+			font-size: 1.4rem;
+			margin-bottom: 1rem;
+			color: c.$bodyColor;
+			a {
+				color: c.$linkColor;
+				font-weight: bold;
+				font-size: 1.4rem;
+			}
+		}
+
+		&-button {
+			width: 100%;
+			text-align: left;
+			padding: 1.5rem;
+			background-color: transparent;
+			border: 1px solid c.$mainColor;
+			box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.273);
+			border-radius: 25px;
+			margin-bottom: 1.5rem;
+			font-weight: bold;
+			font-size: 1.6rem;
+			backdrop-filter: blur(5px);
+			color: c.$bodyColor;
+		}
+		&-button:hover,
+		&-button:focus {
+			background-color: c.$mainColor;
+		}
+		&-button-info {
+			height: 0;
+			opacity: 0;
+			font-size: 1.4rem;
+			padding: 0 1rem;
+			transition: height 0.5s, opacity 0.4s;
+			overflow: hidden;
+			color: c.$bodyColor;
+			backdrop-filter: blur(20px);
+		}
+	}
+	.active-button {
+		height: 50px;
+		opacity: 1;
+	}
+	.active-button .about-me__info-button {
+		width: 100%;
+	}
+}
