@@ -24,6 +24,12 @@ body {
 .bold {
 	font-weight: bold;
 }
+.link {
+	color: c.$linkColor;
+	font-size: 1.3rem;
+	font-weight: bold;
+	padding: 1rem;
+}
 // ----------------------------------NAV-MOBILE----------------------------------------------
 .nav__mobile {
 	padding: 0 1rem;
@@ -264,11 +270,6 @@ body {
 			font-size: 1.4rem;
 			margin-bottom: 1rem;
 			color: c.$bodyColor;
-			a {
-				color: c.$linkColor;
-				font-weight: bold;
-				font-size: 1.4rem;
-			}
 		}
 
 		&-button {
@@ -306,5 +307,73 @@ body {
 	}
 	.active-button .about-me__info-button {
 		width: 100%;
+	}
+}
+
+// =============================================Portfolio-Mobile==========================================
+
+.portfolio-mobile {
+	padding: 1.5rem;
+	height: 100vh;
+	min-height: 100vh;
+	margin-bottom: 8rem;
+
+	&__contener {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+		&-box {
+			position: relative;
+			margin-top: 1rem;
+			display: flex;
+			height: 45%;
+			&-button {
+				width: 100%;
+				transition: width 0.5s;
+				background-color: #8a817c47;
+				border: 1px solid c.$mainColor;
+				border-radius: 25px;
+				backdrop-filter: blur(7px);
+				overflow: hidden;
+				&-text {
+					display: flex;
+					justify-content: center;
+					width: 100%;
+					font-size: 1.5rem;
+					font-weight: bold;
+					color: c.$bodyColor;
+					transition: transform 0.5s;
+				}
+			}
+			&-info {
+				position: absolute;
+				margin-left: 5rem;
+				opacity: 0;
+				transform: translateX(100vh);
+				transition: transform 1s, opacity 0.5s 0.3s;
+				&-text {
+					color: c.$bodyColor;
+					font-size: 1.3rem;
+				}
+				ul {
+					li {
+						margin-left: 1.5rem;
+						color: c.$bodyColor;
+						font-size: 1.2rem;
+					}
+				}
+			}
+			.active-portfolio {
+				width: 8%;
+			}
+			.active-portfolio .portfolio-mobile__contener-box-button-text {
+				transform: rotate(90deg);
+			}
+			.active-portfolio-info {
+				opacity: 1;
+				transform: translateX(0);
+			}
+		}
 	}
 }
