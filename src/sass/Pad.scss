@@ -1,0 +1,142 @@
+@use "./colors" as c;
+@use "./animation" as a;
+
+@media (min-width: 768px) {
+	.link {
+		color: c.$linkColor;
+		font-size: 1.8rem;
+		font-weight: bold;
+		padding: 1rem;
+	}
+
+	.nav__mobile {
+		height: 10rem;
+		&-item {
+			font-size: 2rem;
+			i {
+				font-size: 2.5rem;
+			}
+		}
+	}
+	//
+	// ----------------------------------Header-MOBILE---------------------------------------------
+
+	.header-mobile {
+		&__box {
+			&-title {
+				color: c.$bodyColor;
+				margin-bottom: 2rem;
+				font-size: 4rem;
+			}
+			&-text--mobile {
+				font-size: 1.7rem;
+				text-align: center;
+				color: c.$bodyColor;
+			}
+			&-finger {
+				&-text {
+					font-size: 2rem;
+				}
+				a {
+					margin-top: 3rem;
+					font-size: 5rem;
+				}
+				.active::before {
+					top: 50px;
+					width: 100%;
+					animation: upToDownTablet 0.8s forwards;
+				}
+			}
+		}
+	}
+	//
+	// ----------------------------------About-me-Mobile---------------------------------------------
+	.time-of-learn {
+		font-size: 1.6rem;
+	}
+
+	.about-me {
+		padding: 1.5rem;
+		margin-top: 3rem;
+
+		&__box {
+			&-title {
+				margin: 1.5rem;
+				font-size: 2rem;
+			}
+			&-info {
+				&-photo {
+					&-img {
+						width: 150px;
+						height: 150px;
+					}
+				}
+				&-photo::before {
+					border-top-right-radius: 27px;
+					border-bottom-right-radius: 27px;
+				}
+				&-text {
+					&-title {
+						font-size: 2.5rem;
+					}
+					&-description {
+						font-size: 1.6rem;
+					}
+				}
+			}
+		}
+		&__info {
+			margin-top: 1.5rem;
+			&-box {
+				font-size: 1.6rem;
+				margin-bottom: 1rem;
+				color: c.$bodyColor;
+			}
+
+			&-button {
+				height: 10rem;
+				font-size: 2rem;
+			}
+			&-button-info {
+				font-size: 1.7rem;
+			}
+			&-button-info:last-child {
+				border-bottom: 1px solid c.$bodyColor;
+			}
+		}
+	}
+
+	//
+	// ===========================Portfolio ===================
+
+	.portfolio-mobile {
+		&__contener {
+			&-box {
+				&-button {
+					&-text {
+						display: flex;
+						justify-content: center;
+						width: 100%;
+						font-size: 2rem;
+						font-weight: bold;
+						color: c.$bodyColor;
+						transition: transform 0.5s;
+					}
+				}
+				&-info {
+					margin-left: 10rem;
+					margin-top: 1rem;
+					&-text {
+						font-size: 1.6rem;
+					}
+					ul {
+						li {
+							margin-left: 2rem;
+							font-size: 1.6rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,307 @@
+@use "./colors" as c;
+@use "./animation" as a;
+
+@media (min-width: 1200px) {
+	.nav__mobile {
+		display: none;
+	}
+	// ==============================================nav-dekstop====================================================
+	.nav__desktop {
+		position: fixed;
+		top: 0;
+		left: 50%;
+		width: 70%;
+		height: 5rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: c.$mainColor;
+		box-shadow: 0 0 5px c.$mainColor;
+		border-bottom-left-radius: 25px;
+		border-bottom-right-radius: 25px;
+		transform: translateX(-50%);
+		z-index: 999;
+		&-item {
+			position: relative;
+			display: flex;
+
+			justify-content: center;
+			align-content: center;
+			font-size: 2rem;
+			color: c.$bodyColor;
+			text-decoration: none;
+			padding: 1rem 3.5rem;
+			overflow: hidden;
+
+			&-icon {
+				transition: transform 0.3s, opacity 0.3s;
+			}
+
+			&-name {
+				position: absolute;
+				opacity: 0;
+				width: 100%;
+				transition: transform 0.3s, opacity 0.3s;
+				transform: translateY(100px);
+			}
+		}
+		&-item:nth-child(4) {
+			justify-content: start;
+		}
+		&-item:hover .nav__desktop-item-name {
+			transform: translateY(0px);
+			opacity: 1;
+		}
+		&-item:hover .nav__desktop-item-icon {
+			transform: translateY(-200px);
+			opacity: 0;
+		}
+	}
+
+	// =================================================Header==================================================
+	.header-mobile__box {
+		display: none;
+	}
+
+	.header-desktop__box {
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: c.$bodyColor;
+		&-input {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			overflow: hidden;
+
+			&-title {
+				margin-bottom: 3rem;
+				font-size: 2.5rem;
+			}
+			&-name {
+				align-self: flex-end;
+				width: 30%;
+				height: 3.5rem;
+				border-radius: 25px;
+				text-align: center;
+				font-size: 2rem;
+				background: transparent;
+				border: 1px solid c.$secColor;
+				backdrop-filter: blur(5px);
+				color: c.$bodyColor;
+				transition: width 0.5s;
+			}
+			&-name:hover,
+			&-name:focus {
+				background-color: c.$bodyColor;
+				color: c.$ditalColor;
+			}
+
+			&-link {
+				margin-top: 4rem;
+				align-self: flex-end;
+				color: #fff;
+				font-size: 2.2rem;
+				text-decoration: none;
+				transform: translateX(-100vh);
+				opacity: 0;
+				transition: transform 0.5s, opacity 0.4s;
+			}
+			&-link:hover,
+			&-link:focus {
+				color: c.$linkColor;
+				outline: none;
+			}
+			.show-link {
+				transform: translateX(0);
+				opacity: 1;
+			}
+			.error {
+				align-self: flex-end;
+				margin-top: 0.5rem;
+				width: 30%;
+				text-align: center;
+				color: tomato;
+				font-size: 1.2rem;
+			}
+		}
+	}
+
+	// =================================================about-me==========================================================
+
+	.about-me {
+		margin-top: 6rem;
+		padding: 1.5rem;
+		&__box {
+			&-info {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: c.$bodyColor;
+				margin-bottom: 3rem;
+				&-photo {
+					position: relative;
+					margin-right: 1rem;
+					z-index: 1;
+					&-img {
+						border-radius: 50%;
+						width: 100px;
+						height: 100px;
+						transition: transform 0.3s;
+					}
+					&-img:hover {
+						transform: scale(1.2);
+					}
+				}
+				&-photo::before {
+					display: none;
+				}
+				&-text {
+					&-title {
+						font-size: 2rem;
+					}
+					&-description {
+						font-size: 1.4rem;
+					}
+				}
+			}
+			&-table--desktop {
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				padding: 2rem;
+				padding-bottom: 4.5rem;
+				border: 1px solid c.$mainColor;
+				border-radius: 25px;
+				backdrop-filter: blur(5px);
+				color: c.$bodyColor;
+				position: relative;
+				margin-bottom: 3rem;
+				&-box {
+					margin: 0.4rem;
+					display: flex;
+					flex-direction: column;
+					justify-content: space-center;
+					align-items: center;
+					position: relative;
+
+					&-circle {
+						position: relative;
+						margin: 0.5rem 0;
+						width: 50px;
+						height: 50px;
+						border: 1px solid c.$bodyColor;
+						border-radius: 50%;
+						overflow: hidden;
+
+						&-filling {
+							position: absolute;
+							bottom: 0;
+							width: 100%;
+							height: 0;
+							background-color: c.$bodyColor;
+							transition: height 1s;
+						}
+					}
+					&-percent {
+						font-weight: bold;
+						font-size: 1.3rem;
+						color: c.$bodyColor;
+					}
+				}
+				&-button {
+					position: absolute;
+					bottom: 0;
+					left: 50%;
+					transform: translateX(-70%);
+					background: transparent;
+					color: c.$bodyColor;
+					padding: 1rem;
+					border-radius: 15px;
+					margin-bottom: 0.5rem;
+					cursor: pointer;
+				}
+				&-button:hover {
+					background-color: c.$bodyColor;
+					color: c.$ditalColor;
+				}
+			}
+		}
+		&__info {
+			margin-top: rem;
+			&-box {
+				font-size: 1.4rem;
+				margin-bottom: 1rem;
+				color: c.$bodyColor;
+			}
+
+			&-button {
+				width: 100%;
+				text-align: left;
+				padding: 1.5rem;
+				background-color: transparent;
+				border: 1px solid c.$mainColor;
+				box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.273);
+				border-radius: 25px;
+				margin-top: 1.5rem;
+				font-weight: bold;
+				font-size: 1.6rem;
+				backdrop-filter: blur(5px);
+				color: c.$bodyColor;
+			}
+			&-button:hover,
+			&-button:focus {
+				background-color: c.$mainColor;
+			}
+			&-button-info {
+				height: 0;
+				opacity: 0;
+				font-size: 1.4rem;
+				padding: 0 1rem;
+				transition: height 0.5s, opacity 0.4s;
+				overflow: hidden;
+				color: c.$bodyColor;
+				backdrop-filter: blur(20px);
+			}
+		}
+		.active-button {
+			height: 50px;
+			opacity: 1;
+		}
+		.active-button .about-me__info-button {
+			width: 100%;
+		}
+	}
+	.hellper {
+		position: fixed;
+		right: 20px;
+		bottom: 0;
+		display: block;
+		color: #fff;
+		font-size: 10rem;
+		opacity: 1;
+		transition: opacity 1.4s;
+		animation: ghost 4s infinite;
+		&-message {
+			color: c.$ditalColor;
+			padding: 1.5rem;
+			height: 100%;
+			width: 200%;
+			background-color: c.$bodyColor;
+			position: absolute;
+			font-size: 1.4rem;
+			right: 7rem;
+			top: -90px;
+			clip-path: polygon(
+				0% 0%,
+				100% 0%,
+				100% 75%,
+				75% 75%,
+				75% 100%,
+				50% 75%,
+				0% 75%
+			);
+		}
+	}
+}
