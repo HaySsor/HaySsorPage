@@ -12,27 +12,42 @@
 
 <body>
 
-    <header class="header__mobile" id="header">
-        <div class="header__mobile__box">
-            <div class="header__mobile__box-img">
-                <img src="" alt="">
-            </div>
-            <div class="header__mobile__box-filter"></div>
-            <h1 class="header__mobile__box-title">Stop <i class="fas fa-ban"></i></i></h1>
-            <p class="header__mobile__box-text--mobile">Próbujesz dostać się do tajnych informacji. Aby przejść dalej
+    <header class="header" id="header">
+        <div class="header-mobile__box">
+            <div class="header-mobile__box-filter"></div>
+            <h2 class="header-mobile__box-title">Stop <i class="fas fa-ban"></i></i></h2>
+            <p class="header-mobile__box-text--mobile">Próbujesz dostać się do tajnych informacji. Aby przejść dalej
                 musisz
                 przyłożyć palec </p>
-            <div class="header__mobile__box-finger">
-                <p data="unlock" class='header__mobile__box-finger-text'>Dotknij aby odblokować</p>
-                <a href="javascript:delay('./aboutUs.html')" gul><i class="fas fa-fingerprint"></i></a>
+            <div class="header-mobile__box-finger">
+                <p data="unlock" class='header-mobile__box-finger-text'>Dotknij aby odblokować</p>
+                <a href="javascript:delay('../aboutUs.html')" gul><i class="fas fa-fingerprint"></i></a>
             </div>
         </div>
+        <div class="header-desktop__box">
+            <div class='wrapper'>
+                <div class="header-desktop__box-img">
+                    <img src="" alt="">
+                    <div class="header-dektop_box-filter"></div>
+                </div>
+                <div class="header-desktop__box-input">
+                    <h2 class="header-desktop__box-input-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Numquam dolorem eius mollitia possimus soluta aspernatur nihil praesentium natus minima minus!
+                    </h2>
+                    <input class="header-desktop__box-input-name" data-name type="text" name="name" placeholder="Tu wpisz imie">
+                    <p class="error"></p>
+                    <a href="./aboutUs.html" class="header-desktop__box-input-link" data-link>Wchodzimy</a>
+                </div>
+            </div>
         </div>
+
+
     </header>
 
 
 
-    <script src="./dist/js/script.min.js"></script>
+
+    <script src="../dist/js/script.min.js"></script>
 </body>
 
 </html>

@@ -7,25 +7,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://kit.fontawesome.com/4f17386bac.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./dist/css/Mobile.min.css">
+    <link rel="stylesheet" href="../dist/css/Mobile.min.css">
 </head>
 
 <body>
 
     <nav class=nav__mobile>
-        <a href="./index.html#header" class="nav__mobile-item"><i class="fas fa-home"></i> Home</a>
-        <a href="./aboutUs.html" class="nav__mobile-item"><i class="fas fa-user"></i> O mnie </a>
-        <a href="./portfolio.html" class="nav__mobile-item"><i class="fas fa-book-open"></i> portfolio</a>
-        <a href="#" download="#" class="nav__mobile-item"><i class="fas fa-file"></i> Cv</a>
-        <a href="#" class="nav__mobile-item"><i class="fas fa-address-card"></i> Kontakt</a>
+    <a href="../index.html" class="nav__mobile-item"><i class="fas fa-home"></i> Home</a>
+    <a href="../aboutUs.html" class="nav__mobile-item"><i class="fas fa-user"></i> O mnie </a>
+    <a href="../portfolio.html" class="nav__mobile-item"><i class="fas fa-book-open"></i> portfolio</a>
+    <a href="#" download class="nav__mobile-item"><i class="fas fa-file"></i> Cv</a>
+    <a href="#" class="nav__mobile-item"><i class="fas fa-address-card"></i> Kontakt</a>
 
+</nav>
+
+<div class="wrapper">
+    <nav class="nav__desktop">
+        <a href="../index.html" class="nav__desktop-item"><div class="nav__desktop-item-icon"><i class="fas fa-home"></i></div><div class="nav__desktop-item-name">Home</div></a>
+        <a href="../aboutUs.html" class="nav__desktop-item"><div class="nav__desktop-item-icon"><i class="fas fa-user"></i></div><div class="nav__desktop-item-name">O mnie</div></a>
+        <a href="../portfolio.html" class="nav__desktop-item"><div class="nav__desktop-item-icon"><i class="fas fa-book-open"></i></div><div class="nav__desktop-item-name">portfolio</div></a>
+        <a href="" class="nav__desktop-item"><div class="nav__desktop-item-icon"><i class="fas fa-file"></i></div><div class="nav__desktop-item-name">Cv</div></a>
+        <a href="" class="nav__desktop-item"><div class="nav__desktop-item-icon"><i class="fas fa-address-card"></i></div><div class="nav__desktop-item-name">Kontakt</div></a>
     </nav>
-
-    <!-- <nav class="nav__desktop">
-    <a href="" class="nav__desktop-item">bbbb</a>
-    <a href="" class="nav__desktop-item">bbbb</a>
-    <a href="" class="nav__desktop-item">bbbb</a>
-</nav> -->
+</div>
     <main>
         <section class="portfolio-mobile">
 
@@ -89,12 +93,27 @@
                     </div>
                 </div>
             </div>
+
+
+
+
+
+
+            <!-- <button class="about-me__info-button">
+                <i class="fas fa-building"></i> Doświadczenie programistyczne:
+            </button>
+            <div class="about-me__info-button-info">
+                <p class="about-me__info-box-button-info-text">
+                    Na chwilę obecną tylko kursy i własne projekty, ale możemy to
+                    zmienić 😉
+                </p>
+            </div> -->
         </section>
     </main>
 
 
 
-    <script type="module" src="./dist/js/script.min.js"></script>
+    <script type="module" src="../dist/js/script.min.js"></script>
 </body>
 
 </html>
