@@ -10,9 +10,41 @@
     <link rel="stylesheet" href="./dist/css/Mobile.min.css">
 </head>
 
-<body>
+<body data-body="aboutme">
 
-    <!-- @include 'nav.kit' -->
+    <nav class=nav__mobile>
+    <a href="../index.html" class="nav__mobile-item"><i class="fas fa-home"></i> Home</a>
+    <a href="../aboutMe.html" class="nav__mobile-item"><i class="fas fa-user"></i> O mnie </a>
+    <a href="../portfolio.html" class="nav__mobile-item"><i class="fas fa-book-open"></i> portfolio</a>
+    <a href="#" download class="nav__mobile-item"><i class="fas fa-file"></i> Cv</a>
+    <a href="#" class="nav__mobile-item"><i class="fas fa-address-card"></i> Kontakt</a>
+
+</nav>
+
+<div class="wrapper">
+    <nav class="nav__desktop">
+        <a href="../index.html" class="nav__desktop-item">
+            <div class="nav__desktop-item-icon"><i class="fas fa-home"></i></div>
+            <div class="nav__desktop-item-name">Home</div>
+        </a>
+        <a href="../aboutMe.html" class="nav__desktop-item">
+            <div class="nav__desktop-item-icon"><i class="fas fa-user"></i></div>
+            <div class="nav__desktop-item-name">O mnie</div>
+        </a>
+        <a href="../portfolio.html" class="nav__desktop-item">
+            <div class="nav__desktop-item-icon"><i class="fas fa-book-open"></i></div>
+            <div class="nav__desktop-item-name">portfolio</div>
+        </a>
+        <a href="" class="nav__desktop-item">
+            <div class="nav__desktop-item-icon"><i class="fas fa-file"></i></div>
+            <div class="nav__desktop-item-name">Cv</div>
+        </a>
+        <a href="" class="nav__desktop-item">
+            <div class="nav__desktop-item-icon"><i class="fas fa-address-card"></i></div>
+            <div class="nav__desktop-item-name">Kontakt</div>
+        </a>
+    </nav>
+</div>
 
 
     <main>
@@ -70,13 +102,12 @@
                             </div>
                             <p class="about-me__box-table--desktop-box-percent" data-number='30'>0</p>
                         </div>
-                        <button class="about-me__box-table--desktop-button" data-button>Odpalamy! </button>
                     </div>
                 </div>
                 <div class="about-me__info">
                     <div class="about-me__info-box">
                         <p class="about-me__info-box-text">Oczywiście wiem, że takie procenty nie mówią nic nikomu (ale
-                            ładnie wyglądają ☺️) dlatego tez na moim Githubie jest cala lista moich zadań z kursów wraz
+                            ładnie wyglądają ☺️) dlatego tez na moim Githubie w portfolio w widoku PC jest cala lista moich zadań z kursów wraz
                             z opisem zadania <a class="link" href="https://github.com/HaySsor">o tutaj</a> lecz wpierw
                             zapraszam na
                             zakładkę portfolio. </p>
@@ -120,6 +151,7 @@
                     <p class="about-me__text-info">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed
                         adipisci ipsum, expedita perspiciatis nemo soluta, dolore fuga quo nam quam corporis beatae. Ab
                         dolorem autem eligendi at, ratione corporis eaque.
+
                     </p>
                 </div>
 
@@ -127,7 +159,12 @@
         </section>
     </main>
 
-    <!-- @include 'hellper.kit' -->
+    <div class="hellper">
+    <div class="hellper-message">
+        <p> <span class="user-name"></span></p>
+    </div>
+    <i class="fas fa-ghost"></i>
+</div>
 
     <script src="../src/js/script.js"></script>
     <script src="../dist/js/dataCounter.min.js"></script>

@@ -74,89 +74,101 @@ function delay(URL) {
 }
 
 //================================================ DEKSTOP JAVA-SCRIPT=========================================================
-
+const bodyIndex = document.querySelector('[data-body="index"]');
 let UserName;
 
-const inputName = document.querySelector("[data-name]");
+if (bodyIndex) {
+	const inputName = document.querySelector("[data-name]");
 
-inputName?.addEventListener("change", () => {
-	takeUserName();
-	showLinkToGo();
-	setLocalItem();
-});
-function setLocalItem() {
-	localStorage.setItem("Name", UserName);
-}
-function takeUserName() {
-	UserName = inputName.value;
-	console.log(UserName);
-}
-function showLinkToGo() {
-	const link = document.querySelector("[data-link]");
-	const error = document.querySelector(".error");
-	if (UserName !== "") {
-		if (/[a-zA-Z]/.test(UserName)) {
-			link.classList.add("show-link");
-			error.textContent = "";
-		} else {
-			error.textContent = "Oboje wiemy że nie jest to imie 👀";
-			link.classList.remove("show-link");
+	function hendleLocal() {
+		const hendleUserName = localStorage.getItem("Name");
+		const printName = document.querySelector("[data-user]");
+		if (hendleUserName) {
+			const link = document.querySelector("[data-link]");
+			link?.classList.add("show-link");
+			inputName.style.display = "none";
+			printName.textContent = `${localStorage.getItem("Name")}`;
 		}
-	} else {
-		link.classList.remove("show-link");
-		error.textContent = "Najpierw imie";
+	}
+	hendleLocal();
+	inputName?.addEventListener("change", () => {
+		takeUserName();
+		showLinkToGo();
+		setLocalItem();
+	});
+	function setLocalItem() {
+		localStorage.setItem("Name", UserName);
+	}
+	function takeUserName() {
+		UserName = inputName.value;
+		console.log(UserName);
+	}
+	function showLinkToGo() {
+		const link = document.querySelector("[data-link]");
+		const error = document.querySelector(".error");
+		if (UserName !== "") {
+			if (/[a-zA-Z]/.test(UserName)) {
+				link?.classList.add("show-link");
+				error.textContent = "";
+			} else {
+				error.textContent = "Oboje wiemy że nie jest to imie 👀";
+				link?.classList.remove("show-link");
+			}
+		} else {
+			link?.classList.remove("show-link");
+			error.textContent = "Najpierw imie";
+		}
 	}
 }
 
-// about-me counter number
-const counterItems = document.querySelectorAll(
-	".about-me__box-table--desktop-box-percent"
-);
-const counterBtn = document.querySelector(
-	".about-me__box-table--desktop-button"
-);
+const bodyAboutMe = document.querySelector('[data-body="aboutme"]');
 
-function startFill() {
-	const html = document.querySelector(".desktop-html");
-	const css = document.querySelector(".desktop-css");
-	const sass = document.querySelector(".desktop-sass");
-	const js = document.querySelector(".desktop-js");
-	const react = document.querySelector(".desktop-react");
+if (bodyAboutMe) {
+	// about-me counter number
+	const counterItems = document.querySelectorAll(
+		".about-me__box-table--desktop-box-percent"
+	);
 
-	html.style.height = "90" + "%";
-	css.style.height = "80" + "%";
-	sass.style.height = "80" + "%";
-	js.style.height = "75" + "%";
-	react.style.height = "40" + "%";
-}
+	function startFill() {
+		const html = document.querySelector(".desktop-html");
+		const css = document.querySelector(".desktop-css");
+		const sass = document.querySelector(".desktop-sass");
+		const js = document.querySelector(".desktop-js");
+		const react = document.querySelector(".desktop-react");
 
-function startCounter() {
-	counterItems.forEach(counter => {
-		function ubdateCounter() {
-			const finalNumber = counter.getAttribute("data-number");
-			const value = parseInt(counter.textContent);
-			const speed = finalNumber / 30;
+		html.style.height = "90" + "%";
+		css.style.height = "80" + "%";
+		sass.style.height = "80" + "%";
+		js.style.height = "75" + "%";
+		react.style.height = "40" + "%";
+	}
 
-			if (value < finalNumber) {
-				counter.textContent = `${Math.floor(value + speed)}`;
-				setTimeout(ubdateCounter, 10);
-			} else {
-				counter.textContent = `${finalNumber}%`;
+	function startCounter() {
+		counterItems.forEach(counter => {
+			function ubdateCounter() {
+				const finalNumber = counter.getAttribute("data-number");
+				const value = parseInt(counter.textContent);
+				const speed = finalNumber / 30;
+
+				if (value < finalNumber) {
+					counter.textContent = `${Math.floor(value + speed)}`;
+					setTimeout(ubdateCounter, 10);
+				} else {
+					counter.textContent = `${finalNumber}%`;
+				}
 			}
-		}
 
-		ubdateCounter();
-	});
+			ubdateCounter();
+		});
+	}
+
+	setTimeout(() => {
+		startCounter();
+		startFill();
+	}, 6000);
+
+	setTimeout(() => {
+		const hellper = document.querySelector(".hellper");
+		hellper.style.opacity = "0";
+	}, 5000);
 }
-
-counterBtn?.addEventListener("click", () => {
-	startCounter();
-	startFill();
-});
-
-// ====================helllper========================
-
-setTimeout(() => {
-	const hellper = document.querySelector(".hellper");
-	hellper.style.opacity = "0";
-}, 20000);

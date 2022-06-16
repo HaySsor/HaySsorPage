@@ -76,22 +76,248 @@
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-            <!-- <button class="about-me__info-button">
-                <i class="fas fa-building"></i> Doświadczenie programistyczne:
-            </button>
-            <div class="about-me__info-button-info">
-                <p class="about-me__info-box-button-info-text">
-                    Na chwilę obecną tylko kursy i własne projekty, ale możemy to
-                    zmienić 😉
-                </p>
-            </div> -->
         </section>
+        <selction class="portfolio-desktop">
+            <div class="wrapper">
+                <div class="portfolio-desktop__container">
+
+                    <h3 class="portfolio-desktop__container-title">"Emoji"</h3>
+                    <div class="portfolio-desktop__container-box">
+                        <div class="portfolio-desktop__container-box-code">
+                            <div class="portfolio-desktop__container-box-code-widow">
+                                <div class="portfolio-desktop__container-box-code-widow-buttons">
+                                    <button class="portfolio-desktop__container-box-code-widow-buttons-exit"></button>
+                                    <button class="portfolio-desktop__container-box-code-widow-buttons-full"></button>
+                                    <button class="portfolio-desktop__container-box-code-widow-buttons-mini"></button>
+                                </div>
+                                <div class="portfolio-desktop__container-box-code-widow-text">
+                                    <p> <span class="token class">const</span> emojiMappings = { <br>
+                                        <span class="token space tag">stop</span>:"🚫",<br>
+                                        <span class="token space tag">gwiazda</span>:"⭐️",<br>
+                                        <span class="token space tag">samochód</span>:"🏎",<br>
+                                        <span class="token space tag">buduję</span>:"🧱",<br>
+                                        <span class="token space tag">budzik</span>:"⏰",
+                                        <br>
+                                        }
+                                        <br>
+                                        <br>
+                                        <span class="token function">function</span> <span
+                                            class="token class">useEmoji</span>(input) {
+                                        <br>
+                                        <span class="token space class">const</span> arrayInput = input.<span
+                                            class="token function">split</span>(" ")<br>
+                                        <span class="token space class">const</span> emojiMappingsKeys = <span
+                                            class="token tag">Object</span>.<span
+                                            class="token function">keys</span>(emojiMappings)<br>
+                                        <span class="token space class">let </span>endSing = ""<br>
+                                        <span class="token space">arrayInput</span>.<span
+                                            class="token function">forEach</span>((word, id) <span class="token tag"> =>
+                                        </span>{
+                                        <br>
+                                        <span class="token space-double class">const</span> lastChar = word.<span
+                                            class="token function">slice</span>(-1)<br>
+                                        <span class="token space-double variable">if</span> (lastChar === '.') {<br>
+                                        <span class="space-triple">endSing</span> = '.' <br>
+                                        <span class="space-triple">word</span> = word.<span
+                                            class="token function">substr</span>(word[0], word.<span
+                                            class="token function">length</span> - 1)
+                                        <br>
+                                        <span class="space-double">}</span><br>
+                                        <span class="token space-double variable">if</span> ( emojiMappingsKeys.<span
+                                            class="token function">indexOf</span>(word.<span
+                                            class="token function">toLowerCase</span>()) !== 1 ) { <br>
+                                        <span class="token space-triple ">arrayInput</span>[ id ] =
+                                        emojiMappings[word.<span class="token function">toLowerCase</span>()] + endSing
+                                        <br>
+                                        <span class="space-double">}</span>
+                                        <br>
+                                        <span class="space">})</span><br>
+
+                                        <span class="token space">return</span> arrayInput.<span
+                                            class="token function">join</span>( ' ' )
+
+                                        <br>
+                                        }
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-desktop__container-box-text">
+                            <p class="portfolio-desktop__container-box-text-info"> Cel zadania<br>
+
+                                Zaimplementuj funkcję "useEmoji", która zastąpi wszystkie słowa danego parametru zgodnie
+                                z mapowaniem z obiektu "emojiMappings";</p>
+                            <p class="portfolio-desktop__container-box-text-info">Przykład:
+                                useEmoji('Takiemu zachowaniu mówię stop i to mocny stop!') // => 'Takiemu zachowaniu
+                                mówię 🚫 i to mocny 🚫!'
+                                useEmoji('Jadę po nowy samochód :D') // => 'Jadę po nowy 🏎 :D'</p>
+                        </div>
+                    </div>
+                    <h3 class="portfolio-desktop__container-title">"Policz Słowa"</h3>
+                    <div class="portfolio-desktop__container-box">
+                        <div class="portfolio-desktop__container-box-code">
+                            <div
+                                class="portfolio-desktop__container-box-code-widow portfolio-desktop__container-box-code-widow--small">
+                                <div class="portfolio-desktop__container-box-code-widow-buttons">
+                                    <button class="portfolio-desktop__container-box-code-widow-buttons-exit"></button>
+                                    <button class="portfolio-desktop__container-box-code-widow-buttons-full"></button>
+                                    <button class="portfolio-desktop__container-box-code-widow-buttons-mini"></button>
+                                </div>
+                                <div class="portfolio-desktop__container-box-code-widow-text">
+                                    <p>
+                                        <span class="token function">function</span> <span
+                                            class="token class">countWords</span>(sentence) {
+                                        <br>
+                                        <span class="token space class">const</span> regNumberLetter = <span
+                                            class="token tag">/\w+/g</span>
+                                        <br>
+                                        <span class="token space class">const</span> result = {}
+                                        <br>
+                                        <span class="token space class">const</span> wordArray = sentence.<span
+                                            class="token function">toLowerCase</span>().<span
+                                            class="token function">match</span>(reg)
+                                        <br>
+                                        <span class="token space">wordArray</span>.<span
+                                            class="token function">forEach</span>( word <span class="token tag"> =>
+                                        </span>{
+                                        <br>
+                                        <span class="token space-double variable">if</span> ( ( result[word] =
+                                        result[word] ) ) {
+                                        <br>
+                                        <span class="token space-triple"> result[word] += 1</span>
+                                        <br>
+                                        <span class="token space-double">}</span> <span class="token variable"> else
+                                        </span>{
+                                        <br>
+                                        <span class="token space-triple"> result[word] = 1</span>
+                                        <br>
+                                        <span class="token space-double">}</span>
+                                        <br>
+                                        <span class="token space"></span>})
+                                        <br>
+                                        <span class="token space variable">return</span> result
+                                        <br>
+                                        }
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-desktop__container-box-text">
+                            <p class="portfolio-desktop__container-box-text-info"> Cel zadania<br>
+
+                                Otrzymując zdanie jako parametr wejściowy, zwróć obiekt, który będzie zawierał liczbę
+                                wystąpień każdego słowa w zdaniu. Zignoruj to czy słowo jest napisane z dużej czy z
+                                małej litery.</p>
+                            <p class="portfolio-desktop__container-box-text-info">Przykład:
+                                <br>
+                                countWords("Nauka JavaScript z kursem Opanuj JavaScript to frajda"); // => {
+                                <br>
+                                nauka: 1,
+                                <br>
+                                javascript: 2,
+                                <br>
+                                z: 1,
+                                <br>
+                                kursem: 1,
+                                <br>
+                                opanuj: 1,
+                                <br>
+                                to: 1,
+                                <br>
+                                frajda: 1
+                                <br>
+                                }
+                            </p>
+                        </div>
+                    </div>
+                    <h3 class="portfolio-desktop__container-title">"Funkcje tablicowe"</h3>
+                    <div class="portfolio-desktop__container-box">
+                        <div class="portfolio-desktop__container-box-code">
+                            <div
+                                class="portfolio-desktop__container-box-code-widow portfolio-desktop__container-box-code-widow--medium">
+                                <div class="portfolio-desktop__container-box-code-widow-buttons">
+                                    <button class="portfolio-desktop__container-box-code-widow-buttons-exit"></button>
+                                    <button class="portfolio-desktop__container-box-code-widow-buttons-full"></button>
+                                    <button class="portfolio-desktop__container-box-code-widow-buttons-mini"></button>
+                                </div>
+                                <div class="portfolio-desktop__container-box-code-widow-text">
+                                    <p>
+                                        <span class="token function">function</span> <span
+                                            class="token class">filter</span>( array, callback ) {
+                                        <br>
+                                        <span class="token space class">let</span> arrayLength = 0
+                                        <br>
+                                        <span class="token space class">let</span> result = [ ]
+                                        <br>
+                                        <span class="token space class">const</span> resultArray = array.<span
+                                            class="token function">map</span>(callback)
+                                        <br>
+                                        <span class="token space variable">for</span> ( number <span
+                                            class="token tag">of</span> array) {
+                                        <br>
+                                        <span class="token space-double"> arrayLength++;</span>
+                                        <br>
+                                        <span class="token space">}</span>
+                                        <br>
+                                        <span class="token space variable">for</span> ( <span
+                                            class="token class">let</span> i = 0 ; i < arrayLength ; i++ ) { <br>
+                                            <span class="token space-double variable">if</span> ( resultArray[ i ] ===
+                                            <span class="token tag">true</span> ) {
+                                            <br>
+                                            <span class="token space-triple">result</span>.<span
+                                                class="token function">push</span>( array[ i ] )
+                                            <br>
+                                            <span class="token space-double">}</span>
+                                            <br>
+                                            <span class="token space"></span>}
+                                            <br>
+                                            <span class="token space variable">return</span> result
+                                            <br>
+                                            }
+                                            <br>
+                                            <span class="token function">function</span> <span
+                                                class="token class">length</span>( array ) {
+                                            <br>
+                                            <span class="token space class">let</span> arrayLength = 0
+                                            <br>
+                                            <span class="token space variable">for</span> ( index <span
+                                                class="token tag">of</span> array) {
+                                            <br>
+                                            <span class="token space-double"> arrayLength++;</span>
+                                            <br>
+                                            <span class="token space">}</span>
+                                            <br>
+                                            <span class="token space variable">return</span> arrayLength
+                                            <br>
+                                            }
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-desktop__container-box-text">
+                            <p class="portfolio-desktop__container-box-text-info"> Cel zadania<br>
+                                Zaimplementuj własne wersje funkcji tablicowych Array.prototype.length oraz
+                                Array.prototype.filter, bez wykorzystania tych wbudowanych.
+                            </p>
+                            <p class="portfolio-desktop__container-box-text-info">Przykład:
+                                <br>
+                                filter([1, 2, 3, 4], isEven); // => [2, 4]
+                                <br>
+                                length([1, 2, 3, 4]); // => 4
+                            </p>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </selction>
+
+
+
+
+
     </main>
 
 

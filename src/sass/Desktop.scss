@@ -134,12 +134,17 @@
 		margin-top: 6rem;
 		padding: 1.5rem;
 		&__box {
+			display: flex;
+			justify-content: center;
+			&-title {
+				display: none;
+			}
 			&-info {
 				display: flex;
 				justify-content: center;
 				align-items: center;
 				color: c.$bodyColor;
-				margin-bottom: 3rem;
+				width: 45%;
 				&-photo {
 					position: relative;
 					margin-right: 1rem;
@@ -167,11 +172,11 @@
 				}
 			}
 			&-table--desktop {
+				width: 45%;
 				display: flex;
 				justify-content: space-around;
 				align-items: center;
 				padding: 2rem;
-				padding-bottom: 4.5rem;
 				border: 1px solid c.$mainColor;
 				border-radius: 25px;
 				backdrop-filter: blur(5px);
@@ -209,22 +214,6 @@
 						font-size: 1.3rem;
 						color: c.$bodyColor;
 					}
-				}
-				&-button {
-					position: absolute;
-					bottom: 0;
-					left: 50%;
-					transform: translateX(-70%);
-					background: transparent;
-					color: c.$bodyColor;
-					padding: 1rem;
-					border-radius: 15px;
-					margin-bottom: 0.5rem;
-					cursor: pointer;
-				}
-				&-button:hover {
-					background-color: c.$bodyColor;
-					color: c.$ditalColor;
 				}
 			}
 		}
@@ -275,7 +264,7 @@
 	}
 	.hellper {
 		position: fixed;
-		right: 20px;
+		right: 10%;
 		bottom: 0;
 		display: block;
 		color: #fff;
@@ -302,6 +291,124 @@
 				50% 75%,
 				0% 75%
 			);
+			text-align: center;
+		}
+	}
+
+	// ==============================================Portfolio=============================================================
+
+	.portfolio-mobile {
+		display: none;
+	}
+	.portfolio-desktop {
+		display: block;
+		&__container {
+			margin: 0 1.5rem;
+			margin-top: 8rem;
+			&-title {
+				text-align: center;
+				margin-bottom: 1.5rem;
+				color: c.$bodyColor;
+				font-size: 2rem;
+			}
+			&-box {
+				display: flex;
+				justify-content: space-around;
+				margin-bottom: 5rem;
+				backdrop-filter: blur(5px);
+				&-code {
+					width: 45%;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					&-widow {
+						position: relative;
+						width: 100%;
+						height: 500px;
+						background-color: c.$widowsColor;
+						border-radius: 15px;
+						&--small {
+							height: 280px;
+						}
+						&--medium {
+							height: 400px;
+						}
+
+						&-buttons {
+							position: absolute;
+							top: 0;
+							left: 0;
+							width: 100%;
+							height: 25px;
+							background-color: c.$ramaColor;
+							padding-left: 1rem;
+							border-top-left-radius: 15px;
+							border-top-right-radius: 15px;
+							display: flex;
+							align-items: center;
+
+							&-exit,
+							&-full,
+							&-mini {
+								width: 9px;
+								height: 9px;
+								border-radius: 50%;
+								margin-left: 0.5rem;
+								border: none;
+							}
+							&-exit {
+								background-color: tomato;
+							}
+							&-full {
+								background-color: rgb(250, 200, 99);
+							}
+							&-mini {
+								background-color: rgb(141, 200, 145);
+							}
+						}
+						&-text {
+							color: #fff;
+							padding-top: 4rem;
+							padding-left: 2rem;
+							font-size: 1.3rem;
+
+							.space {
+								margin-left: 2rem;
+							}
+							.space-double {
+								margin-left: 4rem;
+							}
+							.space-triple {
+								margin-left: 6rem;
+							}
+							.class {
+								color: c.$classColor;
+							}
+							.variable {
+								color: c.$variable;
+							}
+							.tag {
+								color: c.$tagColor;
+							}
+							.function {
+								color: c.$funkcionColor;
+							}
+						}
+					}
+				}
+				&-text {
+					height: 500px;
+					width: 45%;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					color: c.$bodyColor;
+					font-size: 1.6rem;
+					&-info {
+						margin-bottom: 2rem;
+					}
+				}
+			}
 		}
 	}
 }
