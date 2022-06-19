@@ -200,4 +200,26 @@ if (bodyPortfolio) {
 			codeWindowText.classList.toggle("hidden-code");
 		});
 	});
+	setTimeout(() => {
+		const hellper = document.querySelector(".hellper");
+		hellper.style.opacity = "0";
+	}, 22000);
+
+	function ShowPortfolioProject() {
+		const firstFoto = document.querySelector('[data-foto="first"]');
+		const firstInfo = document.querySelector('[data-info="first-info"]');
+		const secondtInfo = document.querySelector('[data-info="second-info"]');
+		const secondtFoto = document.querySelector('[data-foto="second"]');
+
+		if (window.scrollY > 1622) {
+			firstFoto.classList.add("move-card");
+			firstInfo.classList.add("move-card");
+		}
+		if (window.scrollY > 2052) {
+			secondtInfo.classList.add("move-card");
+			secondtFoto.classList.add("move-card");
+		}
+	}
+
+	window.addEventListener("scroll", ShowPortfolioProject);
 }
