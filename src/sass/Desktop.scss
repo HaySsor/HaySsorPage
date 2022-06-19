@@ -327,11 +327,15 @@
 						height: 500px;
 						background-color: c.$widowsColor;
 						border-radius: 15px;
+						transition: height 0.8s;
 						&--small {
 							height: 280px;
 						}
 						&--medium {
 							height: 400px;
+						}
+						&--large {
+							height: 530px;
 						}
 
 						&-buttons {
@@ -346,6 +350,7 @@
 							border-top-right-radius: 15px;
 							display: flex;
 							align-items: center;
+							z-index: 10;
 
 							&-exit,
 							&-full,
@@ -371,6 +376,9 @@
 							padding-top: 4rem;
 							padding-left: 2rem;
 							font-size: 1.3rem;
+							opacity: 1;
+							transform: scale(1);
+							transition: opacity 0.3s, transform 0.3s 0.3s;
 
 							.space {
 								margin-left: 2rem;
@@ -394,6 +402,13 @@
 								color: c.$funkcionColor;
 							}
 						}
+						.hidden-code {
+							opacity: 0;
+							transform: scale(0);
+						}
+					}
+					.mini-code {
+						height: 0;
 					}
 				}
 				&-text {

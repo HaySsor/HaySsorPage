@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../dist/css/Mobile.min.css">
 </head>
 
-<body>
+<body data-body="portfolio">
 
     <!-- @include 'nav.kit' -->
     <main>
@@ -86,11 +86,14 @@
                         <div class="portfolio-desktop__container-box-code">
                             <div class="portfolio-desktop__container-box-code-widow">
                                 <div class="portfolio-desktop__container-box-code-widow-buttons">
-                                    <button class="portfolio-desktop__container-box-code-widow-buttons-exit"></button>
-                                    <button class="portfolio-desktop__container-box-code-widow-buttons-full"></button>
-                                    <button class="portfolio-desktop__container-box-code-widow-buttons-mini"></button>
+                                    <button data-exit
+                                        class="portfolio-desktop__container-box-code-widow-buttons-exit"></button>
+                                    <button data-full
+                                        class="portfolio-desktop__container-box-code-widow-buttons-full"></button>
+                                    <button data-mini
+                                        class="portfolio-desktop__container-box-code-widow-buttons-mini"></button>
                                 </div>
-                                <div class="portfolio-desktop__container-box-code-widow-text">
+                                <div data-code class="portfolio-desktop__container-box-code-widow-text">
                                     <p> <span class="token class">const</span> emojiMappings = { <br>
                                         <span class="token space tag">stop</span>:"🚫",<br>
                                         <span class="token space tag">gwiazda</span>:"⭐️",<br>
@@ -159,9 +162,12 @@
                             <div
                                 class="portfolio-desktop__container-box-code-widow portfolio-desktop__container-box-code-widow--small">
                                 <div class="portfolio-desktop__container-box-code-widow-buttons">
-                                    <button class="portfolio-desktop__container-box-code-widow-buttons-exit"></button>
-                                    <button class="portfolio-desktop__container-box-code-widow-buttons-full"></button>
-                                    <button class="portfolio-desktop__container-box-code-widow-buttons-mini"></button>
+                                    <button data-exit
+                                        class="portfolio-desktop__container-box-code-widow-buttons-exit"></button>
+                                    <button data-full
+                                        class="portfolio-desktop__container-box-code-widow-buttons-full"></button>
+                                    <button data-mini
+                                        class="portfolio-desktop__container-box-code-widow-buttons-mini"></button>
                                 </div>
                                 <div class="portfolio-desktop__container-box-code-widow-text">
                                     <p>
@@ -236,9 +242,12 @@
                             <div
                                 class="portfolio-desktop__container-box-code-widow portfolio-desktop__container-box-code-widow--medium">
                                 <div class="portfolio-desktop__container-box-code-widow-buttons">
-                                    <button class="portfolio-desktop__container-box-code-widow-buttons-exit"></button>
-                                    <button class="portfolio-desktop__container-box-code-widow-buttons-full"></button>
-                                    <button class="portfolio-desktop__container-box-code-widow-buttons-mini"></button>
+                                    <button data-exit
+                                        class="portfolio-desktop__container-box-code-widow-buttons-exit"></button>
+                                    <button data-full
+                                        class="portfolio-desktop__container-box-code-widow-buttons-full"></button>
+                                    <button data-mini
+                                        class="portfolio-desktop__container-box-code-widow-buttons-mini"></button>
                                 </div>
                                 <div class="portfolio-desktop__container-box-code-widow-text">
                                     <p>
@@ -304,6 +313,119 @@
                                 filter([1, 2, 3, 4], isEven); // => [2, 4]
                                 <br>
                                 length([1, 2, 3, 4]); // => 4
+                            </p>
+                        </div>
+                    </div>
+                    <h3 class="portfolio-desktop__container-title">"Szyfr Cezra - zmodyfikowany"</h3>
+                    <div class="portfolio-desktop__container-box">
+                        <div class="portfolio-desktop__container-box-code">
+                            <div
+                                class="portfolio-desktop__container-box-code-widow portfolio-desktop__container-box-code-widow--large">
+                                <div class="portfolio-desktop__container-box-code-widow-buttons">
+                                    <button data-exit
+                                        class="portfolio-desktop__container-box-code-widow-buttons-exit"></button>
+                                    <button data-full
+                                        class="portfolio-desktop__container-box-code-widow-buttons-full"></button>
+                                    <button data-mini
+                                        class="portfolio-desktop__container-box-code-widow-buttons-mini"></button>
+                                </div>
+                                <div class="portfolio-desktop__container-box-code-widow-text">
+                                    <p>
+                                        <span class="token function">function</span> <span
+                                            class="token class">caesara13</span>( word, numberOfShifts ) {
+                                        <br>
+                                        <span class="token space variable">if</span>( word === " " || <span
+                                            class="token tag">typeof</span> word !== "string" ){
+                                        <br>
+                                        <span class="token space-double function">throw new</span> <span
+                                            class="token tag">Error</span>(" Podaj Text ")
+                                        <br>
+                                        <span class="token space">}</span>
+                                        <br>
+                                        <span class="token space class">let</span> result
+                                        <br>
+                                        <span class="token space variable">if</span>( word. <span
+                                            class="token function">toLocaleLowerCase</span>() === word ) {
+                                        <br>
+                                        <span class="token space-double class">const</span> alfabet
+                                        ='abcdefghijklmnopqrstuvwxyz'
+                                        <br>
+                                        <span class="token space-double function">createNewWord</span>( word, alfbet,
+                                        numberOfShifts)
+                                        <br>
+                                        <span class="token space">}</span> <span class="token variable">else</span> {
+                                        <br>
+                                        <span class="token space-double class">const </span> alfabet1 =
+                                        'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+                                        <br>
+                                        <span class="token space-double function">createNewWord</span>( word, alfbet1,
+                                        numberOfShifts)
+                                        <br>
+                                        <span class="token space">}</span>
+                                        <br>
+                                        <br>
+                                        <span class="token space function">function</span> <span
+                                            class="token class">createNewWord</span>
+                                        (word, alfabet, number) {
+                                        <br>
+                                        <span class="token space-double class">const</span> wordArray = word. <span
+                                            class="token function">split</span>("")
+                                        <br>
+                                        <span class="token space-double class">const</span> newArry = [ ]
+                                        <br>
+                                        <span class="token space-double class">const</span> scoreArray = [ ]
+                                        <br>
+                                        <span class="token space-double variable">for </span>(<span class="token class">
+                                            let</span>
+                                        i = 0 ; i < word.<span class="token function">length</span> ; i++ ) {
+                                            <br>
+                                            <span class="token space-triple">newArry</span>.<span
+                                                class="token function">push</span>( alfabet.<span
+                                                class="token function">indexOf</span>( wordArray[ i ] ) )
+                                            <br>
+                                            <span class="token space-double">}</span>
+                                            <br>
+                                            <span class="token space-double class">const</span> newWordArray =
+                                            newArry.<span class="token function">map</span>( item <span
+                                                class="token tag"> => </span> ( item + number ) ) % <span
+                                                class="token space-double">alfabet.</span>
+                                            <span class="token function">length</span>)
+                                            <br>
+                                            <br>
+                                            <span class="token space-double variable">for </span>(<span
+                                                class="token class"> let</span>
+                                            j = 0 ; j < newWordArray.<span class="token function">length</span> ; j++ )
+                                                {
+                                                <br>
+                                                <span class="token space-triple">scoreArray</span>.<span
+                                                    class="token function">push</span>( alfabet.[newWordArray[ j ] ) )
+                                                <br>
+                                                <span class="token space-double">}</span>
+                                                <br>
+                                                <span class="token space-double">result</span> = scoreArray.<span
+                                                    class="token function">join</span>( " " )
+                                                <br>
+                                                <span class="token space variable">return</span> result
+                                                <br>
+                                                <span class="token space">}</span>
+                                                <br>
+                                                }
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-desktop__container-box-text">
+                            <p class="portfolio-desktop__container-box-text-info"><br>
+                                Stwórz moduł eksportujący z pomocą ES6 Modules funkcję caesar13. Jako parametr funkcja
+                                ta ma
+                                przyjmować ciąg znaków a następnie zwracać zaszyfrowany zgodnie z ROT13. Wykorzystaj
+                                powyższy
+                                przykład działania aby zweryfikować poprawność Twojej funkcji.
+                                Troche pozmieniałem zadanie dodałem możliwość wprowazenia liczby przesunięcia.
+                            </p>
+                            <p class="portfolio-desktop__container-box-text-info">Przykład:
+                                <br>
+                                PRZEPROGRAMOWANI => CEMRCEBTENZBJNAV
                             </p>
                         </div>
                     </div>

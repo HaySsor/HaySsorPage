@@ -172,3 +172,32 @@ if (bodyAboutMe) {
 		hellper.style.opacity = "0";
 	}, 5000);
 }
+
+const bodyPortfolio = document.querySelector('[data-body="portfolio"]');
+
+if (bodyPortfolio) {
+	const allExitButtons = document.querySelectorAll("[data-exit]");
+	allExitButtons.forEach(button => {
+		button.addEventListener("click", event => {
+			const codeWindow = event.target.parentElement.nextElementSibling;
+			codeWindow.classList.add("hidden-code");
+		});
+	});
+	const allShowButtons = document.querySelectorAll("[data-full]");
+	allShowButtons.forEach(button => {
+		button.addEventListener("click", event => {
+			const codeWindow = event.target.parentElement.nextElementSibling;
+			codeWindow.classList.remove("hidden-code");
+		});
+	});
+	const allMiniButtons = document.querySelectorAll("[data-mini]");
+	allMiniButtons.forEach(button => {
+		button.addEventListener("click", event => {
+			const codeWindow = event.target.parentElement.parentElement;
+			const codeWindowText = event.target.parentElement.nextElementSibling;
+			console.log(codeWindow);
+			codeWindow.classList.toggle("mini-code");
+			codeWindowText.classList.toggle("hidden-code");
+		});
+	});
+}
