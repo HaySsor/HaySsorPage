@@ -73,7 +73,7 @@ function delay(URL) {
 	}, 1200);
 }
 
-//================================================ DEKSTOP JAVA-SCRIPT=========================================================
+//============================= DEKSTOP JAVA-SCRIPT=========================================================
 const bodyIndex = document.querySelector('[data-body="index"]');
 let UserName;
 
@@ -187,6 +187,9 @@ if (bodyPortfolio) {
 	allShowButtons.forEach(button => {
 		button.addEventListener("click", event => {
 			const codeWindow = event.target.parentElement.nextElementSibling;
+			const minicode = event.target.parentElement.parentElement;
+
+			minicode.classList.remove("mini-code");
 			codeWindow.classList.remove("hidden-code");
 		});
 	});
@@ -195,7 +198,7 @@ if (bodyPortfolio) {
 		button.addEventListener("click", event => {
 			const codeWindow = event.target.parentElement.parentElement;
 			const codeWindowText = event.target.parentElement.nextElementSibling;
-			console.log(codeWindow);
+
 			codeWindow.classList.toggle("mini-code");
 			codeWindowText.classList.toggle("hidden-code");
 		});
