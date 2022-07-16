@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://kit.fontawesome.com/4f17386bac.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./dist/css/Mobile.min.css">
+    <link rel="stylesheet" href="./dist/css/Mobile.css">
 </head>
 
 <body data-body="aboutme">
@@ -16,7 +16,7 @@
     <a href="../index.html" class="nav__mobile-item"><i class="fas fa-home"></i> Home</a>
     <a href="../aboutMe.html" class="nav__mobile-item"><i class="fas fa-user"></i> O mnie </a>
     <a href="../portfolio.html" class="nav__mobile-item"><i class="fas fa-book-open"></i> portfolio</a>
-    <a href="#" download class="nav__mobile-item"><i class="fas fa-file"></i> Cv</a>
+    <a href="../cv.html" class="nav__mobile-item"><i class="fas fa-file"></i> Cv</a>
     <a href="#" class="nav__mobile-item"><i class="fas fa-address-card"></i> Kontakt</a>
 
 </nav>
@@ -35,7 +35,7 @@
             <div class="nav__desktop-item-icon"><i class="fas fa-book-open"></i></div>
             <div class="nav__desktop-item-name">portfolio</div>
         </a>
-        <a href="" class="nav__desktop-item">
+        <a href=" ../cv.html" class="nav__desktop-item">
             <div class="nav__desktop-item-icon"><i class="fas fa-file"></i></div>
             <div class="nav__desktop-item-name">Cv</div>
         </a>
@@ -47,19 +47,16 @@
 </div>
 
 
-    <main>
+    <main data-main="aboutme">
         <section class="about-me" id="about-me">
             <div class="wrapper">
                 <div class="about-me__box">
                     <div class="about-me__box-info">
-                        <div class="about-me__box-info-photo">
-                            <img src="../dist/img/zdjecieMnie.png" alt="" class="about-me__box-info-photo-img">
-                        </div>
+                        <img src="../dist/img/zdjecieMnie.png" alt="" class="about-me__box-info-photo-img">
                         <div class="about-me__box-info-text">
-                            <h2 class="about-me__box-info-text-title">Troszkę o mnie</h2>
+                            <h2 class="about-me__box-info-text-title">Info</h2>
                             <p class="about-me__box-info-text-description">
-                                Cześć <i class="far fa-hand-spock"></i>
-                                mam na imie Przemek, od<span data-time class="time-of-learn">Czas</span> uczę sie
+                                Od <span data-time class="time-of-learn">Czas</span> uczę sie
                                 front-endu, jestem samoukiem, moja wiedza oparta jest na kursach, filmach na YouTube
                                 oraz na doświadczeniu jakie wynisłem z własnych projetków.
                             </p>
@@ -104,17 +101,75 @@
                         </div>
                     </div>
                 </div>
-                <div class="about-me__info">
-                    <div class="about-me__info-box">
-                        <p class="about-me__info-box-text">Oczywiście wiem, że takie procenty nie mówią nic nikomu (ale
-                            ładnie wyglądają ☺️) dlatego tez na moim Githubie w portfolio w widoku PC jest cala lista
-                            moich zadań z kursów wraz
-                            z opisem zadania <a class="link" href="https://github.com/HaySsor">o tutaj</a> lecz wpierw
-                            zapraszam na
-                            zakładkę portfolio. </p>
+                <div class="about-me__info-contener">
+                    <div class="about-me__info-contener-box">
+                        <p class="about-me__info-contener-box-text"><span class='bold'>Krótka mapa <i
+                                    class="fas fa-map-signs"></i>
+                                poruszania się po
+                                mojej stronie: <br></span>
+                            Przy każdym elemencie znajdować się będzie znaczek "?" najedź myszką aby dowiedzieć się
+                            czegoś wiecej
                         </p>
+
+                    </div>
+                    <div class="about-me__info-contener-imgbox"><img class="about-me__info-contener-imgbox-img"
+                            src="../dist/img/droga.png" alt=""></div>
+
+                </div>
+
+                <div class="Info-about-me">
+                    <div class="Info-about-me__contener">
+                        <div class="Info-about-me__contener-body">
+                            <h3 class="Info-about-me__contener-body-title">Zainteresowania</h3>
+                            <p class="Info-about-me__contener-body-info">Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Cum, ut ea fuga placeat esse illum blanditiis earum voluptatibus
+                                nesciunt error.</p>
+                        </div>
+                        <div class="Info-about-me__contener-body">
+                            <h3 class="Info-about-me__contener-body-title">Cechy</h3>
+                            <p class="Info-about-me__contener-body-info" data-text-char>Lorem ipsum dolor sit amet
+                                consectetur adipisicing elit. Cum, ut ea fuga placeat esse illum blanditiis earum
+                                voluptatibus nesciunt error.</p>
+                        </div>
+                        <div class="Info-about-me__contener-body">
+                            <h3 class="Info-about-me__contener-body-title">Doświadczenie</h3>
+                            <p class="Info-about-me__contener-body-info">Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Cum, ut ea fuga placeat esse illum blanditiis earum voluptatibus
+                                nesciunt error.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="drag-section">
+                    <div class="drag-section-title">
+                        <h3 class="drag-section-title-title">Tworzenie idalnego pracownika<i
+                                class="fas fa-question-circle"></i> </h3>
+                        <p class='drag-section-title-info'>Jakie cechy pownien mieć twój idealny pracownik? przeciągnij
+                            z jednej strony na drugą te cechy i zobaczy czy w moich cechach coś się nie zmieniło 😉</p>
                     </div>
 
+                    <div class="drag-section__contener">
+                        <div class="drag-section__contener-box drag-section__contener-characteristics-box">
+                            <h3 class="drag-section__contener-box-title ">Cechy do wyboru </h3>
+                            <p class="characteristics" draggable="true">Kreatywność</p>
+                            <p class="characteristics" draggable="true">Niezawodność</p>
+                            <p class="characteristics" draggable="true">Pozytywne nastawienie</p>
+                            <p class="characteristics" draggable="true">Dobra organizacja pracy</p>
+                            <p class="characteristics" draggable="true">Elastyczność</p>
+                            <p class="characteristics" draggable="true">Umiejętność pracy zespołowej</p>
+                            <p class="characteristics" draggable="true">Chęć nauki i dążenie do samorozwoju</p>
+                            <p class="characteristics" draggable="true">Praca pod presją czasu</p>
+                            <p class="characteristics" draggable="true">Rozwiązywanie problemów</p>
+                            <p class="characteristics" draggable="true">Inowacyjność</p>
+                        </div>
+                        <div class="drag-section__contener-box drag-section__contener-characteristics-box-good">
+                            <h3 class="drag-section__contener-box-title ">Cechy twojego nowego pracownika</h3>
+                        </div>
+                    </div>
+                    <h3 class="drag-section-text">Nikt nie ma wszystkich tych cech <i class="far fa-grin"></i> ale
+                        spokojnie mamy kogoś dla ciebie </h3>
+                    <a class="drag-section-btn" href="../cv.html">Twoj nowy pracownik</a>
+                </div>
+                <div class="about-me__info">
                     <button class="about-me__info-button">
                         <i class="fas fa-user-astronaut"></i> Zainteresowania:
                     </button>
@@ -130,9 +185,7 @@
                     </button>
                     <div class="about-me__info-button-info">
                         <p class="about-me__info-box-button-info-text">
-                            praca w zespole, szybkie przyswajanie wiedzy, chęć do nauki
-                            nowych rzeczy,
-                        </p>
+                            Kreatywność, Chęć nauki i dążenie do samorozwoju, Umiejętność pracy zespołowej Elastyczność
                     </div>
 
 
@@ -145,16 +198,83 @@
                             zmienić 😉
                         </p>
                     </div>
+                </div>
+
+                <div class="road">
+                    <div class="road-title">
+                        <h3 class="road-title-title">Road-Map<i class="fas fa-question-circle"></i> </h3>
+                        <p class='road-title-info'>Tutaj jest moja "road-mapa" te kolorowe kontenerki to języki
+                            programowania które już umiem i te które chce się jeszcze nauczyć</p>
+                    </div>
+                    <img src="../dist/img/45775.jpg" alt="" class="road__image">
+                    <i class="fas fa-map-marker-alt road-pin"></i>
+
+                    <div class="road__box road__box--html">
+                        <h3 class="road__box-title">
+                            HTML
+                            <br>
+                            <i class="fab fa-html5"></i>
+                        </h3>
+                    </div>
+                    <div class="road__box road__box--css-sass">
+                        <h3 class="road__box-title">
+                            CSS/SASS
+                            <br>
+                            <i class="fab fa-css3-alt"></i>
+                        </h3>
+                    </div>
+                    <div class="road__box road__box--JS">
+                        <h3 class="road__box-title">
+                            JS
+                            <br>
+                            <i class="fab fa-js"></i>
+                        </h3>
+                    </div>
+                    <div class="road__box road__box--Ract">
+                        <h3 class="road__box-title">
+                            React
+                            <br>
+                            <i class="fab fa-react"></i>
+                        </h3>
+                    </div>
+                    <div class="road__box road__box--TS">
+                        <h3 class="road__box-title">
+                            TypeScript
+                            <br>
+                        </h3>
+                    </div>
+                    <div class="road__box road__box--NextJS">
+                        <h3 class="road__box-title">
+                            Next.js
+                            <br>
+                        </h3>
+                    </div>
+                    <div class="road__box road__box--NodeJS">
+                        <h3 class="road__box-title">
+                            Node.js
+                            <br>
+
+                        </h3>
+                    </div>
+                    <div class="road__box road__box--React-Native">
+                        <h3 class="road__box-title">
+                            React Native
+                            <br>
+
+                        </h3>
+                    </div>
+                    <div class="road__box road__box--Swift">
+                        <h3 class="road__box-title">
+                            Swift
+                            <br>
+
+                        </h3>
+                    </div>
+
 
                 </div>
 
-                <div class="about-me__text">
-                    <p class="about-me__text-info">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed
-                        adipisci ipsum, expedita perspiciatis nemo soluta, dolore fuga quo nam quam corporis beatae. Ab
-                        dolorem autem eligendi at, ratione corporis eaque.
 
-                    </p>
-                </div>
 
             </div>
         </section>
@@ -162,14 +282,14 @@
 
     <div class="hellper">
     <div class="hellper-message">
-        <p> <span class="user-name"></span></p>
+        <p><span class="user-name"></span></p>
     </div>
     <i class="fas fa-ghost"></i>
 </div>
 
     <script src="../src/js/script.js"></script>
-    <script src="../dist/js/dataCounter.min.js"></script>
-    <script src="../src/js/nameMessage.js"></script>
+    <script src="../dist/js/dataCounter.js"></script>
+    <script src="../src/js/HellperMessage/nameMessage.js" type="module"></script>
 </body>
 
 </html>

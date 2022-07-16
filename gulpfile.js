@@ -9,6 +9,7 @@ const imagemin = require("gulp-imagemin");
 const sourcemaps = require("gulp-sourcemaps");
 const clean = require("gulp-clean");
 const kit = require("gulp-kit");
+const concat = require("gulp-concat");
 
 const browserSync = require("browser-sync").create();
 const reload = browserSync.reload;
@@ -30,7 +31,6 @@ function sassCompiler(done) {
 		.pipe(sass().on("error", sass.logError))
 		.pipe(autoprefixer())
 		.pipe(cssnano())
-		.pipe(rename({ suffix: ".min" }))
 		.pipe(sourcemaps.write())
 		.pipe(dest(paths.sassDest));
 	done();
@@ -45,7 +45,6 @@ function javaScript(done) {
 			})
 		)
 		.pipe(uglify())
-		.pipe(rename({ suffix: ".min" }))
 		.pipe(sourcemaps.write())
 		.pipe(dest(paths.jsDest));
 

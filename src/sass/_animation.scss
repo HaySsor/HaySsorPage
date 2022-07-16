@@ -1,11 +1,6 @@
 @keyframes upToDown {
 	to {
-		top: 115px;
-	}
-}
-@keyframes upToDownTablet {
-	to {
-		top: 147px;
+		top: 100%;
 	}
 }
 
@@ -22,3 +17,62 @@
 	}
 }
 
+@keyframes shake {
+	0% {
+		transform: rotate(0);
+	}
+	40% {
+		transform: rotate(5deg);
+	}
+	80% {
+		transform: rotate(-5deg);
+	}
+	100% {
+		transform: rotate(0);
+	}
+}
+
+@keyframes pop {
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes happy {
+	0% {
+		transform: translate(0);
+	}
+	10% {
+		transform: translate(-2px, -2px);
+	}
+	20% {
+		transform: translate(2px, -2px);
+	}
+	30% {
+		transform: translate(-2px, 2px);
+	}
+	40% {
+		transform: translate(2px, 2px);
+	}
+	50% {
+		transform: translate(-2px, -2px);
+	}
+	60% {
+		transform: translate(2px, -2px);
+	}
+	70% {
+		transform: translate(-2px, 2px);
+	}
+	80% {
+		transform: translate(-2px, -2px);
+	}
+	90% {
+		transform: translate(2px, -2px);
+	}
+	100% {
+		transform: translate(0);
+	}
+}

@@ -75,6 +75,24 @@ function delay(URL) {
 
 //============================= DEKSTOP JAVA-SCRIPT=========================================================
 const bodyIndex = document.querySelector('[data-body="index"]');
+const header = document.querySelector(".header");
+
+function showHint() {
+	const questionMarks = document.querySelectorAll(".fa-question-circle");
+
+	questionMarks.forEach(mark => {
+		mark.addEventListener("mouseenter", () => {
+			const modal = mark.parentElement.nextElementSibling;
+			console.log(mark.parentElement.nextElementSibling);
+			modal.classList.add("show-modal");
+		});
+		mark.addEventListener("mouseleave", () => {
+			const modal = mark.parentElement.nextElementSibling;
+			modal.classList.remove("show-modal");
+		});
+	});
+}
+
 let UserName;
 
 if (bodyIndex) {
@@ -82,14 +100,33 @@ if (bodyIndex) {
 
 	function hendleLocal() {
 		const hendleUserName = localStorage.getItem("Name");
-		const printName = document.querySelector("[data-user]");
+		const hellper = document.querySelector(".hellper");
+		const headerTitle = document.querySelector(
+			".header-desktop__box-input-title"
+		);
+		const enter = document.querySelector(".header-desktop__box-input-link");
+		const btn = document.querySelector('[data-btn="inputName"]');
 		if (hendleUserName) {
 			const link = document.querySelector("[data-link]");
-			link?.classList.add("show-link");
+			link.classList.add("show-link");
+			header.classList.add("show-header");
 			inputName.style.display = "none";
-			printName.textContent = `${localStorage.getItem("Name")}`;
+			hellper.style.opacity = "0";
+			enter.style.display = "block";
+			btn.style.display = "none";
+			headerTitle.textContent = `${
+				hendleUserName.charAt(0).toUpperCase() + hendleUserName.slice(1)
+			}, wejdź do śrokda bo zmarzmiesz 🥶`;
+		} else {
+			setTimeout(() => {
+				header.classList.add("show-header");
+			}, 12000);
+			setTimeout(() => {
+				hellper.style.opacity = "0";
+			}, 12000);
 		}
 	}
+
 	hendleLocal();
 	inputName?.addEventListener("change", () => {
 		takeUserName();
@@ -104,73 +141,187 @@ if (bodyIndex) {
 		console.log(UserName);
 	}
 	function showLinkToGo() {
-		const link = document.querySelector("[data-link]");
+		const btn = document.querySelector('[data-btn="inputName"]');
 		const error = document.querySelector(".error");
+		const input = document.querySelector(".header-desktop__box-input-name");
 		if (UserName !== "") {
 			if (/[a-zA-Z]/.test(UserName)) {
-				link?.classList.add("show-link");
+				btn.classList.add("show-btn");
+				input.classList.remove("error-input");
 				error.textContent = "";
+				showInfoIndexPage(btn);
 			} else {
 				error.textContent = "Oboje wiemy że nie jest to imie 👀";
-				link?.classList.remove("show-link");
+				btn.classList.remove("show-btn");
+				input.classList.add("error-input");
 			}
 		} else {
-			link?.classList.remove("show-link");
+			btn.classList.remove("show-btn");
+			input.classList.add("error-input");
 			error.textContent = "Najpierw imie";
 		}
 	}
+	const showInfoIndexPage = btn => {
+		btn.addEventListener("click", () => {
+			const info = document.querySelector(".header-desktop__box-info");
+			const inputbox = document.querySelector(".header-desktop__box-input");
+			const name = localStorage.getItem("Name");
+			const userName = document.querySelector(".index-name");
+			console.log(userName)
+
+			userName.textContent = name.charAt(0).toUpperCase() + name.slice(1);
+			inputbox.classList.add("hide-input");
+			info.classList.add("show-info-card");
+		});
+	};
 }
 
 const bodyAboutMe = document.querySelector('[data-body="aboutme"]');
 
 if (bodyAboutMe) {
+	const mainAboutMe= document.querySelector('[data-main="aboutme"]')
+	setTimeout(() => {
+		mainAboutMe.style.opacity='1'
+	},5000)
 	// about-me counter number
 	const counterItems = document.querySelectorAll(
 		".about-me__box-table--desktop-box-percent"
 	);
 
-	function startFill() {
-		const html = document.querySelector(".desktop-html");
-		const css = document.querySelector(".desktop-css");
-		const sass = document.querySelector(".desktop-sass");
-		const js = document.querySelector(".desktop-js");
-		const react = document.querySelector(".desktop-react");
-
-		html.style.height = "90" + "%";
-		css.style.height = "80" + "%";
-		sass.style.height = "80" + "%";
-		js.style.height = "75" + "%";
-		react.style.height = "40" + "%";
+	function startFill(language, procent) {
+		return new Promise((resolve, reject) => {
+			setTimeout(() => {
+				(item = document.querySelector(`.desktop-${language}`)),
+					(item.style.height = `${procent}%`);
+				resolve();
+			}, 1000);
+		});
 	}
 
-	function startCounter() {
-		counterItems.forEach(counter => {
+	counterItems.forEach(counter => {
+		setTimeout(() => {
 			function ubdateCounter() {
 				const finalNumber = counter.getAttribute("data-number");
 				const value = parseInt(counter.textContent);
-				const speed = finalNumber / 30;
+				const speed = finalNumber / 20;
 
 				if (value < finalNumber) {
 					counter.textContent = `${Math.floor(value + speed)}`;
-					setTimeout(ubdateCounter, 10);
+					setTimeout(ubdateCounter, 50);
 				} else {
 					counter.textContent = `${finalNumber}%`;
 				}
 			}
-
 			ubdateCounter();
-		});
-	}
-
+		}, 7000);
+	});
 	setTimeout(() => {
-		startCounter();
-		startFill();
+		(async () => {
+			await startFill("html", 90);
+			await startFill("css", 80);
+			await startFill("sass", 80);
+			await startFill("js", 75);
+			await startFill("react", 40);
+			// await startCounter();
+		})();
 	}, 6000);
 
-	setTimeout(() => {
-		const hellper = document.querySelector(".hellper");
+	const hellper = document.querySelector(".hellper");
+	hellper.addEventListener("dblclick", () => {
+		const message = document.querySelector(".user-name");
+		hellper.style.color = "tomato";
 		hellper.style.opacity = "0";
-	}, 5000);
+		message.textContent = "Ała";
+	});
+	setTimeout(() => {
+		hellper.style.opacity = "0";
+	}, 6000);
+
+	function DragCharacters() {
+		const characteristics = document.querySelectorAll(".characteristics");
+		const boxes = document.querySelectorAll(".drag-section__contener-box");
+		const chosenBox = document.querySelector(
+			".drag-section__contener-characteristics-box-good"
+		);
+		const charactersBox = document.querySelector(
+			".drag-section__contener-characteristics-box"
+		);
+
+		characteristics.forEach(item => {
+			item.addEventListener("dragstart", () => {
+				item.classList.add("is-dragged");
+			});
+			item.addEventListener("dragend", () => {
+				item.classList.remove("is-dragged");
+			});
+		});
+
+		boxes.forEach(box => {
+			box.addEventListener("dragover", e => {
+				e.preventDefault();
+				const isDragged = document.querySelector(".is-dragged");
+				box.append(isDragged);
+				characteresChosen();
+				getChar();
+			});
+		});
+		function characteresChosen() {
+			const notChosenCharact =
+				charactersBox.querySelectorAll(".characteristics");
+			const text = document.querySelector(".drag-section-text");
+			const btn = document.querySelector(".drag-section-btn");
+
+			if (chosenBox.childElementCount > 6) {
+				notChosenCharact.forEach(item => {
+					item.setAttribute("draggable", "false");
+					item.classList.add("characteristics-disabled");
+					text.classList.add("show-text-btn");
+					btn.classList.add("btn-show");
+				});
+			} else {
+				notChosenCharact.forEach(item => {
+					item.setAttribute("draggable", "true");
+					item.classList.remove("characteristics-disabled");
+					text.classList.remove("show-text-btn");
+					btn.classList.remove("btn-show");
+				});
+			}
+		}
+	}
+
+	DragCharacters();
+
+	function getChar() {
+		const goodBox = document.querySelector(
+			".drag-section__contener-characteristics-box-good"
+		);
+		const chosencharacters = goodBox.querySelectorAll(".characteristics");
+		const text = document.querySelector("[data-text-char]");
+		const arr = [];
+		chosencharacters.forEach(item => {
+			arr.push(item.textContent);
+		});
+
+		text.textContent = arr.join(", ");
+		text.style.fontWeight = "bold";
+	}
+
+	function showHint() {
+		const questionMarks = document.querySelectorAll(".fa-question-circle");
+
+		questionMarks.forEach(mark => {
+			mark.addEventListener("mouseenter", () => {
+				const modal = mark.parentElement.nextElementSibling;
+				console.log(mark.parentElement.nextElementSibling);
+				modal.classList.add("show-modal");
+			});
+			mark.addEventListener("mouseleave", () => {
+				const modal = mark.parentElement.nextElementSibling;
+				modal.classList.remove("show-modal");
+			});
+		});
+	}
+	showHint();
 }
 
 const bodyPortfolio = document.querySelector('[data-body="portfolio"]');
@@ -203,26 +354,88 @@ if (bodyPortfolio) {
 			codeWindowText.classList.toggle("hidden-code");
 		});
 	});
-	setTimeout(() => {
-		const hellper = document.querySelector(".hellper");
+	const hellper = document.querySelector(".hellper");
+	hellper.addEventListener("dblclick", () => {
+		const message = document.querySelector(".user-name");
+		hellper.style.color = "tomato";
 		hellper.style.opacity = "0";
-	}, 22000);
+		message.textContent = "Ała";
+	});
+	setTimeout(() => {
+		hellper.style.opacity = "0";
+	}, 17000);
 
 	function ShowPortfolioProject() {
-		const firstFoto = document.querySelector('[data-foto="first"]');
-		const firstInfo = document.querySelector('[data-info="first-info"]');
-		const secondtInfo = document.querySelector('[data-info="second-info"]');
-		const secondtFoto = document.querySelector('[data-foto="second"]');
+		const box1 = document.querySelector(".box1");
+		const box2 = document.querySelector(".box2");
+		const box3 = document.querySelector(".box3");
+		const box4 = document.querySelector(".box4");
 
-		if (window.scrollY > 1622) {
-			firstFoto.classList.add("move-card");
-			firstInfo.classList.add("move-card");
+		if (window.scrollY > 592) {
+			box1.classList.add("move-card");
+		} else {
+			box1.classList.remove("move-card");
 		}
-		if (window.scrollY > 2052) {
-			secondtInfo.classList.add("move-card");
-			secondtFoto.classList.add("move-card");
+		if (window.scrollY > 1200) {
+			box2.classList.add("move-card");
+		} else {
+			box2.classList.remove("move-card");
+		}
+		if (window.scrollY > 1800) {
+			box3.classList.add("move-card");
+		} else {
+			box3.classList.remove("move-card");
+		}
+		if (window.scrollY > 2400) {
+			box4.classList.add("move-card");
+		} else {
+			box4.classList.remove("move-card");
 		}
 	}
 
+	function changeImage(box, url) {
+		const imgBox = document.querySelector(`.${box}`);
+
+		imgBox.style.backgroundImage = `url(${url})`;
+	}
+
+	let i = 1;
+
+	function imgRoller(delay, i) {
+		setTimeout(() => {
+			changeImage(
+				"portfolio-desktop__projects-box-image",
+				`../../dist/img/strona${i}.jpg`
+			);
+		}, delay);
+	}
+	setInterval(() => {
+		imgRoller(500, i);
+		i++;
+		if (i > 8) {
+			i = 1;
+		}
+	}, 3000);
+
 	window.addEventListener("scroll", ShowPortfolioProject);
+	showHint();
+}
+
+const cvBody = document.querySelector('[data-body="cv"]');
+
+if (cvBody) {
+	const conffetiBtn = document.querySelector('[data-button="confetti"]');
+	const conffetiText = document.querySelector(".cv__contener-button-box-title");
+	const conffetiBox = document.querySelector(".cv__contener-button-box");
+
+	conffetiBtn.addEventListener("click", () => {
+		party.confetti(conffetiBtn);
+		conffetiText.textContent = "Yeey";
+		conffetiBox.classList.add("happy");
+	});
+
+	const hellper = document.querySelector(".hellper");
+	setTimeout(() => {
+		hellper.style.opacity = "0";
+	}, 9000);
 }

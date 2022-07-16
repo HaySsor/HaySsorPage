@@ -1,0 +1,46 @@
+@mixin btn {
+	text-decoration: none;
+	color: c.$ditalColor;
+	padding: 20px;
+	border: none;
+	border-radius: 20px;
+	background-color: c.$funkcionColor;
+	box-shadow: 0 5px 0 rgba(11, 65, 118, 1);
+	transition: transform 0.1s ease-out, opacity 0.8s;
+	&:active,
+	&:hover {
+		box-shadow: 0 0 0 #8c837e;
+		transform: translateY(5px);
+	}
+	&:focus {
+		outline: none;
+	}
+}
+@mixin titleModal {
+	position: relative;
+	margin-bottom: 1.5rem;
+	&-title {
+		text-align: center;
+		font-size: 3rem;
+		color: c.$ditalColor;
+		i {
+			margin-left: 1rem;
+			z-index: 4;
+		}
+	}
+	&-info {
+		position: absolute;
+		width: 200px;
+		background-color: c.$mainColor;
+		border-radius: 15px;
+		padding: 2rem;
+		border-radius: 20px;
+		font-size: 1.4rem;
+		font-style: italic;
+		color: c.$bodyColor;
+		transform-origin: top left;
+		opacity: 0;
+		transition: opacity 0.7s;
+		z-index: 10;
+	}
+}

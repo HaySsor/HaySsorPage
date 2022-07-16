@@ -7,18 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://kit.fontawesome.com/4f17386bac.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./dist/css/Mobile.min.css">
+    <link rel="stylesheet" href="./dist/css/Mobile.css">
 </head>
 
-<body data-body="index">
+<body data-body="index" class="index-body">
+
 
     <header class="header" id="header">
         <div class="header-mobile__box">
-            <div class="header-mobile__box-filter"></div>
-            <h2 class="header-mobile__box-title">Stop <i class="fas fa-ban"></i></i></h2>
-            <p class="header-mobile__box-text--mobile">Próbujesz dostać się do tajnych informacji. Aby przejść dalej
-                musisz
-                przyłożyć palec </p>
+            <div class="header-mobile__box-info">
+                <img class="header-mobile__box-info-img" src="../dist/img/zdjecieMnie.png" alt="">
+                <div class="header-mobile__box-info-box">
+                    <h3 class="header-mobile__box-info-box-title">Cześć</h3>
+                    <p class="header-mobile__box-info-box-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Maxime doloremque, tempora voluptatem excepturi earum adipisci natus tenetur dolorem harum.
+                        Itaque soluta consequatur, enim incidunt esse libero quos debitis cupiditate sequi.
+                    </p>
+                </div>
+            </div>
             <div class="header-mobile__box-finger">
                 <p data="unlock" class='header-mobile__box-finger-text'>Dotknij aby odblokować</p>
                 <a href="javascript:delay('../aboutMe.html')" gul><i class="fas fa-fingerprint"></i></a>
@@ -26,17 +32,23 @@
         </div>
         <div class="header-desktop__box">
             <div class='wrapper'>
-                <div class="header-desktop__box-img">
-                    <img src="" alt="">
-                    <div class="header-dektop_box-filter"></div>
-                </div>
                 <div class="header-desktop__box-input">
-                    <h2 class="header-desktop__box-input-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Numquam dolorem eius mollitia possimus soluta aspernatur nihil praesentium natus minima minus! <span data-user></span>
-                    </h2>
-                    <input class="header-desktop__box-input-name" data-name type="text" name="name" placeholder="Tu wpisz imie">
+                    <h3 class='header-desktop__box-input-title'></h3>
+                    <input class="header-desktop__box-input-name" data-name type="text" name="name" placeholder="Imie">
                     <p class="error"></p>
-                    <a href="./aboutMe.html" class="header-desktop__box-input-link" data-link>Wchodzimy</a>
+                    <button data-btn="inputName" class="header-desktop__box-input-btn">Poznajmy się</button>
+                    <a href="./aboutMe.html" class="header-desktop__box-input-link">Wejście</a>
+                </div>
+                <div class="header-desktop__box-info">
+                    <img class="header-desktop__box-info-img" src="../dist/img/zdjecieMnie.png" alt="">
+                    <div class="header-desktop__box-info-box">
+                        <h3 class="header-desktop__box-info-box-title">Cześć <span class="index-name"></span></h3>
+                        <p class="header-desktop__box-info-box-text">Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Maxime doloremque, tempora voluptatem excepturi earum adipisci natus tenetur dolorem
+                            harum. Itaque soluta consequatur, enim incidunt esse libero quos debitis cupiditate sequi.
+                        </p>
+                        <a href="./aboutMe.html" class="header-desktop__box-info-box-link" data-link>Wchodzimy</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -45,9 +57,18 @@
     </header>
 
 
+    <div class="hellper">
+    <div class="hellper-message">
+        <p><span class="user-name"></span></p>
+    </div>
+    <i class="fas fa-ghost"></i>
+</div>
 
 
-    <script src="../dist/js/script.min.js"></script>
+
+
+    <script src="../dist/js/script.js"></script>
+    <script src="../src/js/HellperMessage/nameMessageIndex.js" type="module"></script>
 </body>
 
 </html>

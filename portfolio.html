@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://kit.fontawesome.com/4f17386bac.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../dist/css/Mobile.min.css">
+    <link rel="stylesheet" href="../dist/css/Mobile.css">
 </head>
 
 <body data-body="portfolio">
@@ -16,7 +16,7 @@
     <a href="../index.html" class="nav__mobile-item"><i class="fas fa-home"></i> Home</a>
     <a href="../aboutMe.html" class="nav__mobile-item"><i class="fas fa-user"></i> O mnie </a>
     <a href="../portfolio.html" class="nav__mobile-item"><i class="fas fa-book-open"></i> portfolio</a>
-    <a href="#" download class="nav__mobile-item"><i class="fas fa-file"></i> Cv</a>
+    <a href="../cv.html" class="nav__mobile-item"><i class="fas fa-file"></i> Cv</a>
     <a href="#" class="nav__mobile-item"><i class="fas fa-address-card"></i> Kontakt</a>
 
 </nav>
@@ -35,7 +35,7 @@
             <div class="nav__desktop-item-icon"><i class="fas fa-book-open"></i></div>
             <div class="nav__desktop-item-name">portfolio</div>
         </a>
-        <a href="" class="nav__desktop-item">
+        <a href=" ../cv.html" class="nav__desktop-item">
             <div class="nav__desktop-item-icon"><i class="fas fa-file"></i></div>
             <div class="nav__desktop-item-name">Cv</div>
         </a>
@@ -111,12 +111,53 @@
         </section>
         <selction class="portfolio-desktop">
             <div class="wrapper">
+                <div class="portfolio-desktop__projects">
+                    <div class="portfolio-desktop__projects-title">
+                        <h3 class="portfolio-desktop__projects-title-title">Projekty<i
+                                class="fas fa-question-circle"></i> </h3>
+                        <p class='portfolio-desktop__projects-title-info'>Tutaj są moje najważniejsze projekty, wiecej
+                            informacji jest na moim github</p>
+                    </div>
+                    <div class="portfolio-desktop__projects-box">
+
+                        <div class="portfolio-desktop__projects-box-image"></div>
+                        <div data-info="first-info" class="portfolio-desktop__projects-box-info">
+                            <h3>BowlingCenter</h3>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet unde neque praesentium!
+                            Recusandae impedit, iste delectus eligendi nobis saepe sit nemo soluta in. Dolores fugit
+                            voluptate nisi tenetur fugiat! Perferendis quisquam exercitationem ab nobis, dolores
+                            similique quo cum accusantium perspiciatis?
+                        </div>
+                    </div>
+                    <div class="portfolio-desktop__projects-box">
+                        <div data-info="second-info"
+                            class="portfolio-desktop__projects-box-info portfolio-desktop__projects-box-info--left">
+                            <h3>"Hayss-Page"</h3>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet unde neque praesentium!
+                            Recusandae impedit, iste delectus eligendi nobis saepe sit nemo soluta in. Dolores fugit
+                            voluptate nisi tenetur fugiat! Perferendis quisquam exercitationem ab nobis, dolores
+                            similique quo cum accusantium perspiciatis?
+                        </div>
+                        <div class="portfolio-desktop__projects-box-image portfolio-desktop__projects-box-image2"></div>
+                    </div>
+                </div>
+                <div class="portfolio-desktop__projects-box">
+
+                    <div class="portfolio-desktop__projects-box-image"></div>
+                    <div data-info="first-info" class="portfolio-desktop__projects-box-info">
+                        <h3>"My-Portal"</h3>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet unde neque praesentium!
+                        Recusandae impedit, iste delectus eligendi nobis saepe sit nemo soluta in. Dolores fugit
+                        voluptate nisi tenetur fugiat! Perferendis quisquam exercitationem ab nobis, dolores
+                        similique quo cum accusantium perspiciatis?
+                    </div>
+                </div>
                 <div class="portfolio-desktop__container">
 
                     <h3 class="portfolio-desktop__container-title">"Emoji"</h3>
                     <div class="portfolio-desktop__container-box">
                         <div class="portfolio-desktop__container-box-code">
-                            <div class="portfolio-desktop__container-box-code-widow">
+                            <div class="portfolio-desktop__container-box-code-widow box1">
                                 <div class="portfolio-desktop__container-box-code-widow-buttons">
                                     <button data-exit
                                         class="portfolio-desktop__container-box-code-widow-buttons-exit"></button>
@@ -192,7 +233,7 @@
                     <div class="portfolio-desktop__container-box">
                         <div class="portfolio-desktop__container-box-code">
                             <div
-                                class="portfolio-desktop__container-box-code-widow portfolio-desktop__container-box-code-widow--small">
+                                class="portfolio-desktop__container-box-code-widow box2 portfolio-desktop__container-box-code-widow--small">
                                 <div class="portfolio-desktop__container-box-code-widow-buttons">
                                     <button data-exit
                                         class="portfolio-desktop__container-box-code-widow-buttons-exit"></button>
@@ -272,7 +313,7 @@
                     <div class="portfolio-desktop__container-box">
                         <div class="portfolio-desktop__container-box-code">
                             <div
-                                class="portfolio-desktop__container-box-code-widow portfolio-desktop__container-box-code-widow--medium">
+                                class="portfolio-desktop__container-box-code-widow portfolio-desktop__container-box-code-widow--medium box3">
                                 <div class="portfolio-desktop__container-box-code-widow-buttons">
                                     <button data-exit
                                         class="portfolio-desktop__container-box-code-widow-buttons-exit"></button>
@@ -352,7 +393,7 @@
                     <div class="portfolio-desktop__container-box">
                         <div class="portfolio-desktop__container-box-code">
                             <div
-                                class="portfolio-desktop__container-box-code-widow portfolio-desktop__container-box-code-widow--large">
+                                class="portfolio-desktop__container-box-code-widow portfolio-desktop__container-box-code-widow--large box4">
                                 <div class="portfolio-desktop__container-box-code-widow-buttons">
                                     <button data-exit
                                         class="portfolio-desktop__container-box-code-widow-buttons-exit"></button>
@@ -463,33 +504,7 @@
                     </div>
                 </div>
 
-                <div class="portfolio-desktop__projects">
-                    <h3 class="portfolio-desktop__projects-title">Projekty</h3>
-                    <div class="portfolio-desktop__projects-box">
-                        <img data-foto="first" class="portfolio-desktop__projects-box-image"
-                            src="../dist/img/Bez nazwy-1.jpg" alt="">
-                        <div data-info="first-info" class="portfolio-desktop__projects-box-info">
-                            <h3>BowlingCenter</h3>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet unde neque praesentium!
-                            Recusandae impedit, iste delectus eligendi nobis saepe sit nemo soluta in. Dolores fugit
-                            voluptate nisi tenetur fugiat! Perferendis quisquam exercitationem ab nobis, dolores
-                            similique quo cum accusantium perspiciatis?
-                        </div>
-                    </div>
-                    <div class="portfolio-desktop__projects-box">
-                        <div data-info="second-info"
-                            class="portfolio-desktop__projects-box-info portfolio-desktop__projects-box-info--left">
-                            <h3>Moja Strona</h3>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet unde neque praesentium!
-                            Recusandae impedit, iste delectus eligendi nobis saepe sit nemo soluta in. Dolores fugit
-                            voluptate nisi tenetur fugiat! Perferendis quisquam exercitationem ab nobis, dolores
-                            similique quo cum accusantium perspiciatis?
-                        </div>
-                        <img data-foto="second"
-                            class="portfolio-desktop__projects-box-image portfolio-desktop__projects-box-image--right"
-                            src="../dist/img/Bez nazwy-1.jpg" alt="">
-                    </div>
-                </div>
+
             </div>
         </selction>
 
@@ -498,15 +513,15 @@
 
         <div class="hellper">
     <div class="hellper-message">
-        <p> <span class="user-name"></span></p>
+        <p><span class="user-name"></span></p>
     </div>
     <i class="fas fa-ghost"></i>
 </div>
     </main>
 
 
-    <script src="../dist/js/nameMessagePortfolio.min.js"></script>
-    <script type="module" src="../dist/js/script.min.js"></script>
+    <script src="../src/js/HellperMessage/nameMessagePortfolio.js" type="module"></script>
+    <script type="module" src="../src/js/script.js"></script>
 
 </body>
 
