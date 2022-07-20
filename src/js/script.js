@@ -167,7 +167,7 @@ if (bodyIndex) {
 			const inputbox = document.querySelector(".header-desktop__box-input");
 			const name = localStorage.getItem("Name");
 			const userName = document.querySelector(".index-name");
-			console.log(userName)
+			console.log(userName);
 
 			userName.textContent = name.charAt(0).toUpperCase() + name.slice(1);
 			inputbox.classList.add("hide-input");
@@ -179,10 +179,10 @@ if (bodyIndex) {
 const bodyAboutMe = document.querySelector('[data-body="aboutme"]');
 
 if (bodyAboutMe) {
-	const mainAboutMe= document.querySelector('[data-main="aboutme"]')
+	const mainAboutMe = document.querySelector('[data-main="aboutme"]');
 	setTimeout(() => {
-		mainAboutMe.style.opacity='1'
-	},5000)
+		mainAboutMe.style.opacity = "1";
+	}, 5000);
 	// about-me counter number
 	const counterItems = document.querySelectorAll(
 		".about-me__box-table--desktop-box-percent"
@@ -363,7 +363,7 @@ if (bodyPortfolio) {
 	});
 	setTimeout(() => {
 		hellper.style.opacity = "0";
-	}, 17000);
+	}, 12000);
 
 	function ShowPortfolioProject() {
 		const box1 = document.querySelector(".box1");
@@ -434,6 +434,47 @@ if (cvBody) {
 		conffetiBox.classList.add("happy");
 	});
 
+	const hellper = document.querySelector(".hellper");
+	setTimeout(() => {
+		hellper.style.opacity = "0";
+	}, 9000);
+}
+// ===================================CONTACT==================================================
+
+const contactBody = document.querySelector('[data-body="contact"]');
+
+if (contactBody) {
+	const btn = document.querySelector(".contact-wrapper__btn");
+
+	const toggleOptions = () => {
+		const wrapperEl = document.querySelector(".contact-wrapper");
+		const iconEL = btn.querySelector("i");
+
+		wrapperEl.classList.toggle("active");
+
+		if (iconEL.classList.contains("fa-share-alt")) {
+			iconEL.classList.replace("fa-share-alt", "fa-times");
+		} else {
+			iconEL.classList.replace("fa-times", "fa-share-alt");
+		}
+	};
+
+	btn.addEventListener("click", toggleOptions);
+
+	const emailCopy = document.querySelector(".contact-contener__box h3");
+	const modal = document.querySelector(".contact-contener__box .modal");
+
+	function copy() {
+		navigator.clipboard.writeText("Hayss007@gmail.com");
+	}
+
+	emailCopy.addEventListener("click", () => {
+		copy();
+		modal.style.opacity = "1";
+		setTimeout(() => {
+			modal.style.opacity = "0";
+		}, 500);
+	});
 	const hellper = document.querySelector(".hellper");
 	setTimeout(() => {
 		hellper.style.opacity = "0";

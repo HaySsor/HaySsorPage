@@ -5,12 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <script src="https://kit.fontawesome.com/4f17386bac.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../dist/css/Mobile.css">
+    <link rel="stylesheet" href="./dist/css/Mobile.css">
+    <script defer src="./src/js/script.js" type="module"></script>
+    <script src="../src/js/HellperMessage/nameMessageContact.js" type="module"></script>
+    <title>Document</title>
 </head>
 
-<body data-body="cv">
+<body data-body="contact">
+
     <nav class=nav__mobile>
     <a href="../index.html" class="nav__mobile-item"><i class="fas fa-home"></i> Home</a>
     <a href="../aboutMe.html" class="nav__mobile-item"><i class="fas fa-user"></i> O mnie </a>
@@ -45,22 +48,33 @@
     </nav>
 </div>
 
-    <section class="cv">
-        <div class="wrapper">
-            <h2 class="cv__title">CV</h2>
-            <div class="cv__contener">
-                <div class="cv__contener-img">
-                    <img src="../dist/img/droga.png" alt="">
-                </div>
-                <div class="cv__contener-button-box">
-                    <h3 class="cv__contener-button-box-title">Kliknij jak najszybiecj !</h3>
-                    <button data-button="confetti" class="cv__contener-button-box-btn"> <a download
-                            href="../dist/download/cv.txt">Pobierz</a></button>
+    <section class="contact">
 
+        <div class="wrapper">
+            <div class="contact-contener">
+                <h1>Kontakt</h1>
+                <div class="contact-contener__box">
+                    <h3 ">Hayss007@gmail.com</h3>
+                        <p class=" modal">Skopiowanio ;)</p>
                 </div>
             </div>
 
+            <div class="contact-wrapper">
+                <button class="contact-wrapper__btn"><i class="fas fa-share-alt"></i></button>
+                <ul class="contact-wrapper__list">
+                    <li class="contact-wrapper__list-item"> <a href="#" class="link linkInsta"><i
+                                class="fab fa-instagram"></i></a></li>
+                    <li class="contact-wrapper__list-item"> <a href="#" class="link linkGithub"><i
+                                class="fab fa-github"></i></a>
+                    </li>
+                    <li class="contact-wrapper__list-item"> <a href="#" class="link linkFacebook"><i
+                                class="fab fa-facebook"></i></a>
+                    </li>
+                </ul>
+            </div>
+
         </div>
+
     </section>
 
     <div class="hellper">
@@ -69,11 +83,6 @@
     </div>
     <i class="fas fa-ghost"></i>
 </div>
-
-
-    <script type="module" src="../src/js/HellperMessage/NameMessageCv.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
-    <script type="module" src="../src/js/script.js"></script>
 </body>
 
 </html>
