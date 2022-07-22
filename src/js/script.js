@@ -392,7 +392,7 @@ if (bodyPortfolio) {
 	function changeImage(box, url) {
 		const imgBox = document.querySelector(`.${box}`);
 
-		imgBox.style.backgroundImage = `url(${url})`;
+		imgBox.style.backgroundImage = `url('${url}')`;
 	}
 
 	let i = 1;
