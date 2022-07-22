@@ -179,10 +179,6 @@ if (bodyIndex) {
 const bodyAboutMe = document.querySelector('[data-body="aboutme"]');
 
 if (bodyAboutMe) {
-	const mainAboutMe = document.querySelector('[data-main="aboutme"]');
-	setTimeout(() => {
-		mainAboutMe.style.opacity = "1";
-	}, 5000);
 	// about-me counter number
 	const counterItems = document.querySelectorAll(
 		".about-me__box-table--desktop-box-percent"

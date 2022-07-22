@@ -11,10 +11,6 @@ function setTime() {
 	const result = currentTime - date;
 
 	const month = Math.floor(result / 1000 / 60 / 60 / 24 / 30);
-	// const hours = Math.floor(result / 1000 / 60 / 60) % 24;
-	// const minuts = Math.floor(result / 1000 / 60) % 60;
-	// const seconds = Math.floor(result / 1000) % 60;
-
 	time.textContent = `${month} miesięcy`;
 }
 
