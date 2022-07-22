@@ -401,7 +401,7 @@ if (bodyPortfolio) {
 		setTimeout(() => {
 			changeImage(
 				"portfolio-desktop__projects-box-image",
-				`../img/strona${i}.jpg`
+				`./img/strona${i}.jpg`
 			);
 		}, delay);
 	}
