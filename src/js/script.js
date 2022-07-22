@@ -120,10 +120,10 @@ if (bodyIndex) {
 		} else {
 			setTimeout(() => {
 				header.classList.add("show-header");
-			}, 12000);
+			}, 10000);
 			setTimeout(() => {
 				hellper.style.opacity = "0";
-			}, 12000);
+			}, 10000);
 		}
 	}
 
@@ -186,9 +186,9 @@ if (bodyAboutMe) {
 
 	function startFill(language, procent) {
 		return new Promise((resolve, reject) => {
+			const item = document.querySelector(`.desktop-${language}`);
 			setTimeout(() => {
-				(item = document.querySelector(`.desktop-${language}`)),
-					(item.style.height = `${procent}%`);
+				item.style.height = `${procent}%`;
 				resolve();
 			}, 1000);
 		});
