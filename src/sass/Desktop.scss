@@ -168,9 +168,10 @@
 			align-items: center;
 			opacity: 0;
 			transition: opacity 1s;
+			width: 1200px;
 
 			&-img {
-				width: 35%;
+				width: 30%;
 				border-radius: 25px;
 				transform: perspective(750px) translate3d(0px, 0px, -250px)
 					rotateX(27deg) scale(0.9, 0.9);
@@ -188,17 +189,20 @@
 				flex-direction: column;
 				align-items: center;
 				justify-content: center;
-				width: 45%;
+				width: 60%;
+				height: 500px;
 				&-title {
 					margin-bottom: 2rem;
 					text-align: center;
-					font-size: 2rem;
+					font-size: 2.2rem;
 				}
 				&-text {
-					margin-bottom: 2.5rem;
-					font-size: 1.3rem;
+					margin-bottom: 4rem;
+					font-size: 1.8rem;
+					text-align: justify;
 				}
 				&-link {
+					align-self: flex-end;
 					@include btn;
 					cursor: default;
 					text-decoration: none;
@@ -264,10 +268,12 @@
 				}
 				&-text {
 					&-title {
+						text-align: left;
 						font-size: 2rem;
 					}
 					&-description {
 						font-size: 1.4rem;
+						text-align: justify;
 					}
 				}
 			}
@@ -386,6 +392,7 @@
 				&-info {
 					top: 15px;
 					right: -200px;
+					text-align: center;
 				}
 				.show-modal {
 					opacity: 1;
@@ -488,6 +495,7 @@
 					}
 					&-info {
 						font-size: 1.5rem;
+						text-align: center;
 					}
 					&:nth-child(2):after,
 					&:nth-child(2)::before {
@@ -802,7 +810,7 @@
 			z-index: 2;
 
 			&::after {
-				content: "Tu Jestem";
+				content: "Tu jestem";
 				position: absolute;
 				top: -30px;
 				left: -30px;
@@ -821,6 +829,7 @@
 			&-info {
 				top: 15px;
 				right: 300px;
+				text-align: center;
 			}
 			.show-modal {
 				opacity: 1;
@@ -1055,6 +1064,7 @@
 				&-info {
 					top: 15px;
 					right: 300px;
+					text-align: center;
 				}
 			}
 			&-box {
@@ -1074,15 +1084,17 @@
 				}
 				&-info {
 					display: flex;
-					text-align: center;
+					text-align: justify;
 					flex-direction: column;
 					justify-content: center;
 					width: 45%;
-					font-size: 1.4rem;
+					font-size: 1.5rem;
 					color: c.$ditalColor;
 					transition: transform 1s 0.3s;
 					h3 {
 						color: c.$funkcionColor;
+						font-size: 2.2rem;
+						margin-bottom: 2rem;
 					}
 				}
 			}

@@ -6,8 +6,8 @@ const name = localStorage.getItem("Name");
 	await welcomeMessage(
 		`Cześć ${
 			name.charAt(0).toUpperCase() + name.slice(1)
-		} miło mi że odwiedzasz moją strone `,
+		}! Miło mi, że odwiedzasz moją stronę. `,
 		0
 	);
-	await welcomeMessage(`Tu znajdziesz krótkie informacje o mnie`, 3000);
+	await welcomeMessage(`Tu znajdziesz najważniejsze informacje o mnie.`, 3000);
 })();

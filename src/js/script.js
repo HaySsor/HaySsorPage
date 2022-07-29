@@ -111,19 +111,22 @@ if (bodyIndex) {
 			link.classList.add("show-link");
 			header.classList.add("show-header");
 			inputName.style.display = "none";
-			hellper.style.opacity = "0";
+			hellper.style.display = "none";
 			enter.style.display = "block";
 			btn.style.display = "none";
 			headerTitle.textContent = `${
 				hendleUserName.charAt(0).toUpperCase() + hendleUserName.slice(1)
-			}, wejdź do śrokda bo zmarzmiesz 🥶`;
+			} wejdź do środka, bo zmarzniesz! 🥶`;
 		} else {
 			setTimeout(() => {
 				header.classList.add("show-header");
-			}, 10000);
+			}, 7000);
 			setTimeout(() => {
 				hellper.style.opacity = "0";
-			}, 10000);
+				setTimeout(() => {
+					hellper.style.display = "none";
+				}, 700);
+			}, 7000);
 		}
 	}
 
@@ -231,6 +234,9 @@ if (bodyAboutMe) {
 	});
 	setTimeout(() => {
 		hellper.style.opacity = "0";
+		setTimeout(() => {
+			hellper.style.display = "none";
+		}, 600);
 	}, 6000);
 
 	function DragCharacters() {
@@ -355,10 +361,13 @@ if (bodyPortfolio) {
 		const message = document.querySelector(".user-name");
 		hellper.style.color = "tomato";
 		hellper.style.opacity = "0";
-		message.textContent = "Ała";
+		message.textContent = "AŁA!";
 	});
 	setTimeout(() => {
 		hellper.style.opacity = "0";
+		setTimeout(() => {
+			hellper.style.display = "none";
+		}, 600);
 	}, 12000);
 
 	function ShowPortfolioProject() {
@@ -416,7 +425,7 @@ if (bodyPortfolio) {
 	window.addEventListener("scroll", ShowPortfolioProject);
 	showHint();
 }
-
+// =========================================CV==================================
 const cvBody = document.querySelector('[data-body="cv"]');
 
 if (cvBody) {
@@ -426,13 +435,16 @@ if (cvBody) {
 
 	conffetiBtn.addEventListener("click", () => {
 		party.confetti(conffetiBtn);
-		conffetiText.textContent = "Yeey";
+		conffetiText.textContent = "Yeey!";
 		conffetiBox.classList.add("happy");
 	});
 
 	const hellper = document.querySelector(".hellper");
 	setTimeout(() => {
 		hellper.style.opacity = "0";
+		setTimeout(() => {
+			hellper.style.display = "none";
+		}, 600);
 	}, 9000);
 }
 // ===================================CONTACT==================================================
@@ -474,5 +486,8 @@ if (contactBody) {
 	const hellper = document.querySelector(".hellper");
 	setTimeout(() => {
 		hellper.style.opacity = "0";
+		setTimeout(() => {
+			hellper.style.display = "none";
+		}, 100);
 	}, 9000);
 }
