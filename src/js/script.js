@@ -114,9 +114,8 @@ if (bodyIndex) {
 			hellper.style.display = "none";
 			enter.style.display = "block";
 			btn.style.display = "none";
-			headerTitle.textContent = `${
-				hendleUserName.charAt(0).toUpperCase() + hendleUserName.slice(1)
-			} wejdź do środka, bo zmarzniesz! 🥶`;
+			headerTitle.textContent = `${hendleUserName.charAt(0).toUpperCase() + hendleUserName.slice(1)
+				} wejdź do środka, bo zmarzniesz! 🥶`;
 		} else {
 			setTimeout(() => {
 				header.classList.add("show-header");

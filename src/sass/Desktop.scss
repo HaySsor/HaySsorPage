@@ -1081,7 +1081,15 @@
 					background-repeat: no-repeat;
 					background-position: center;
 					transition: background 1s;
+					border: 1px solid black;
+					&-weather {
+						background-image: url("../img/chromeEx.jpg");
+					}
+					&-mySide {
+						background-image: url("../img/mySide.jpg");
+					}
 				}
+
 				&-info {
 					display: flex;
 					text-align: justify;
@@ -1096,11 +1104,22 @@
 						font-size: 2.2rem;
 						margin-bottom: 2rem;
 					}
+					a {
+						font-size: 1.7rem;
+						color: tomato;
+					}
 				}
 			}
 		}
 		.move-card {
 			transform: translate3d(0px, 0px, -250px);
+		}
+		.gitHub-js {
+			text-align: center;
+			font-size: 2.4rem;
+			a {
+				color: tomato;
+			}
 		}
 	}
 
