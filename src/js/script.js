@@ -11,7 +11,7 @@ function MobileAboutMeButtons() {
 	}
 
 	function openAcordeon() {
-		text = this.nextElementSibling;
+		const text = this.nextElementSibling;
 		if (text.classList.contains("active-button")) {
 			text.classList.remove("active-button");
 		} else {

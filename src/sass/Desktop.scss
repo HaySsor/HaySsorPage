@@ -1088,6 +1088,9 @@
 					&-mySide {
 						background-image: url("../img/mySide.jpg");
 					}
+					&-rpg {
+						background-image: url("../img/simple-rpg.jpg");
+					}
 				}
 
 				&-info {
@@ -1113,13 +1116,6 @@
 		}
 		.move-card {
 			transform: translate3d(0px, 0px, -250px);
-		}
-		.gitHub-js {
-			text-align: center;
-			font-size: 2.4rem;
-			a {
-				color: tomato;
-			}
 		}
 	}
 

@@ -4,10 +4,7 @@
 
 @media (min-width: 768px) {
 	.link {
-		padding: 1rem;
-		font-weight: bold;
 		font-size: 1.8rem;
-		color: c.$linkColor;
 	}
 
 	.nav__mobile {
@@ -131,13 +128,14 @@
 		&__box {
 			display: flex;
 			justify-content: space-around;
+			align-items: center;
 			&-title {
 				display: none;
 			}
 			&-info {
 				display: flex;
 				width: 40%;
-				height: 350px;
+				height: 250px;
 				color: c.$ditalColor;
 				box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.638);
 				background-color: c.$bodyColor;
@@ -258,18 +256,18 @@
 					flex-direction: column;
 					padding: 2rem;
 					width: 30%;
-					height: 200px;
+					height: 300px;
 					color: c.$ditalColor;
 					background-color: c.$bodyColor;
 					box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.578);
 					border-radius: 20px;
 					&-title {
 						margin-bottom: 2rem;
-						font-size: 2.5rem;
+						font-size: 2rem;
 						color: c.$funkcionColor;
 					}
 					&-info {
-						font-size: 1.5rem;
+						font-size: 1.4rem;
 					}
 					&:nth-child(2):after,
 					&:nth-child(2)::before {
@@ -574,7 +572,17 @@
 					background-repeat: no-repeat;
 					background-position: center;
 					transition: background-image 1s;
+					&-weather {
+						background-image: url("../img/chromeEx.jpg");
+					}
+					&-mySide {
+						background-image: url("../img/mySide.jpg");
+					}
+					&-rpg {
+						background-image: url("../img/simple-rpg.jpg");
+					}
 				}
+
 				&-info {
 					display: flex;
 					text-align: center;
@@ -592,6 +600,13 @@
 		}
 		.move-card {
 			transform: translate3d(0px, 0px, -250px);
+		}
+		.gitHub-js {
+			text-align: center;
+			font-size: 2.4rem;
+			a {
+				color: tomato;
+			}
 		}
 	}
 
